@@ -1,0 +1,25 @@
+const express = require('express');
+const app = express();
+const http = require('http');
+const port = process.env.PORT || 3000;
+let server = http.createServer(app);
+
+app.use(express.static(__dirname + '/public'));
+//usar socket.io
+const socketIO = require('socket.io');
+let io = socketIO(server);
+
+//crear el socket
+io.on('connection', function(client){
+    console.log('an user connected');
+    //manejador de eventos
+    client.on('enviar',(data)=>{
+      console.log(data.bus)
+      io.emit('enviar',{bus:data.bus,opcion:data.opcion});
+
+    })
+});
+
+  server.listen(port, ()=>{
+    console.log(`Listening on port ${port}`);
+})
