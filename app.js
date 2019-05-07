@@ -5,7 +5,10 @@ const port = process.env.PORT || 3000;
 let server = http.createServer(app);
 
 app.use(express.static(__dirname + '/public'));
-app.get('/login', function(req, res) { res.sendFile('login.html'); });
+app.get('/login', function(req, res) { 
+  res.sendFile(__dirname+'/public/login.html'); 
+});
+
 //usar socket.io
 const socketIO = require('socket.io');
 let io = socketIO(server);
