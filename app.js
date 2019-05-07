@@ -9,6 +9,9 @@ app.get('/login', function(req, res) {
   res.sendFile(__dirname+'/public/login.html'); 
 });
 
+app.get('/home', function(req, res) { 
+  res.sendFile(__dirname+'/public/index.html'); 
+});
 //usar socket.io
 const socketIO = require('socket.io');
 let io = socketIO(server);
