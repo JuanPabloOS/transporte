@@ -1,0 +1,169 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1em;
+}
+.contenedor{
+    box-sizing: border-box;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+    .elemPrin{
+        height: 80%;
+        padding: 10px;
+    }
+    .deco{
+        /* flex-basis: 45%; */
+        background-image: url("../img/deco.jpg");
+        background-repeat: no-repeat;
+        background-size: 200%;
+        display: flex;
+        box-shadow: 4px 4px 10px #2C3E50;
+        border: 1px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #ffffff;
+        flex-basis: 40%;
+        align-items: center;
+    }
+        .inDeco{
+            width: 60%;
+            height: 30px;
+            padding: 5px;
+            margin: 5px;
+            border: 0;
+            border-radius: 15px;
+            text-align: center;
+            /* border-bottom: 2px; */
+            /* border-bottom: solid; */
+            /* border-bottom-color: #003362; */
+            font-size: 1.25em;
+            color: rgb(41, 43, 49);
+            background-color: rgba(255, 255, 255, .6);
+        }
+            .registrar{
+                border-radius: 25px;
+                color: #fff;
+                background-color: #FE4A49;
+                width: 35%;
+                height: 40px;;
+                border: 0;
+                padding: 5px;
+                align-self: flex-end;
+            }
+            .deco .nombre{
+                color: #fff;
+            }
+    .login{
+        display: flex;
+        box-shadow: 4px 4px 10px #2C3E50;
+        border: 1px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #ffffff;
+        flex-basis: 40%;
+        align-items: center;
+    }   
+        /* h1{
+            padding: 10px;
+            align-self: center;
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Sofia', cursive;
+            color: #31353D;
+        } */
+        .texto{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .nombre{
+            text-align: center;
+            color: #003362;
+            font-family: 'Sofia', cursive;
+            font-size: 2.5em;
+            padding: 5px;
+            width: 100%;
+        }
+        p{
+            text-align: center;
+            color: rgb(41, 43, 49);
+            padding: 5px;
+            width: 100%;
+            font-size: 1.25em;
+        }
+        form{
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow: 1;
+            height: 80%;
+        }
+        input{
+            width: 60%;
+            height: 30px;
+            padding: 5px;
+            margin: 5px;
+            border: 0;
+            border-bottom: 2px;
+            border-bottom: solid;
+            border-bottom-color: #003362;
+            font-size: 1.25em;
+            background-color: #fff;
+        }
+            .iniciar{
+                border-radius: 25px;
+                color: #fff;
+                background-color: #FE4A49;
+                width: 35%;
+                height: 40px;;
+                border: 0;
+                padding: 5px;
+            }
+            /* pantalla pequeña */
+            @media all and (max-width: 400px){
+                .deco{flex-basis: 85%; /* adapta login */
+                    height: 90%;}
+                .login{flex-basis: 85%; /* adapta login */
+                    height: 90%;}
+                h1{font-size: 2.5em;} /* ajuste letra */
+                P{font-size: 1em;}
+                input{font-size: 1em;}
+                .registrar{align-self: center;}
+            }
+            /* pantalla mediana */
+            @media all and (max-width: 700px){
+                .deco{flex-basis: 85%;
+                    height: 90%;}
+                .login{flex-basis: 85%;
+                    height: 90%;}
+                .registrar{width: 70%;}
+            }
+            /* pantalla grande */
+            @media all and (max-width: 1000px){
+                .iniciar{width: 75%;}
+                input, p{width: 95%;}
+                .inDeco{width: 95%;}
+                
+                .registrar{width: 55%;}
+            }
+            /* pantalla mas grande */
+            @media all and (min-width: 2500px){
+                .nombre{font-size: 4em;}
+                p{font-size: 1.75em;}
+                input{font-size: 2em;
+                    height: 50px;}
+                .iniciar{height: 50px;}
+            }

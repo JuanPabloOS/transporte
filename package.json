@@ -18,7 +18,9 @@
   "homepage": "https://github.com/JuanPabloOS/transporte#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "nodemon": "^1.18.11",
     "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
   }
 }
