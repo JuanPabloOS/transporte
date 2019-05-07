@@ -1,16 +1,41 @@
 var socket = io();
-//Contador del total de personas para cada camión
+//Contador del total de personas ue ha opinado
+//sobre cada camión
 var personasB1 = 0;
 var personasB2 = 0;
 //contador de las opciones seleccionadas por las personas
 var contadorBus1 = [0,0,0];
 var contadorBus2 = [0,0,0];
 
-function actualizar(bus,opcion){
-    socket.emit('enviar',{
-        bus: bus,
-        opcion:opcion
-    })    
+//Estas variables indican para cuál autobús ha opinado la persona
+//si está en true significa que ha opinado para dicho autobús
+var bus1 = false
+var bus2 = false
+//guarda el número de la opción ue ha seleccionado
+var bus1OpcionStatus = 0
+var bus2OpcionPasajeros = 0
+
+
+//esta función se manda llamar cuando se selecciona una opción
+//la varibale bus indica si es el autobús 1 o 2
+//la variable opción indica el estatus del camión
+function actualizar(bus,opcion){  
+    if(bus==1 && bus1==false){
+        socket.emit('enviar',{
+            bus: bus,
+            opcion:opcion
+        })
+        bus1=true
+    } 
+    if(bus==2 && bus2==false){
+        socket.emit('enviar',{
+            bus: bus,
+            opcion:opcion
+        })
+        bus2=true
+    }   
+    
+    
 }
 
 socket.on('enviar',(data)=>{
@@ -35,6 +60,8 @@ socket.on('enviar',(data)=>{
     llenarGraficas(data.bus)
 })
 
+//actualiza la gráficas
+//recibe el número del autobús
 function llenarGraficas(bus){
     if(bus==1){
         document.getElementById("b1-1").style.width = contadorBus1[0]*100/personasB1+"%"

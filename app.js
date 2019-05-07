@@ -14,8 +14,7 @@ let io = socketIO(server);
 io.on('connection', function(client){
     console.log('an user connected');
     //manejador de eventos
-    client.on('enviar',(data)=>{
-      console.log(data.bus)
+    client.on('enviar',(data)=>{      
       io.emit('enviar',{bus:data.bus,opcion:data.opcion});
 
     })
