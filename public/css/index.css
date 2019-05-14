@@ -24,6 +24,9 @@
     align-items: center;
     flex-wrap: wrap-reverse;
 }
+.contOpciones{
+    width: 65%;
+}
 .elem{
     height: 80%;
     padding: 10px;
@@ -37,17 +40,6 @@
     border-bottom-right-radius: 5px;
     background-color: #ffffff;
     flex-basis: 40%;
-    align-items: center;
-}
-.opcion{
-    border-radius: 25px;
-    color: #fff;
-    background-color: #FE4A49;
-    width: 35%;
-    height: 40px;;
-    border: 0;
-    padding: 5px;
-    display: flex;
     align-items: center;
 }
 .bus2{
@@ -86,18 +78,34 @@ p{
 input{
     width: 60%;
     height: 30px;
-    padding: 5px;
+    padding-left: px;
     margin: 5px;
     border: 0;
     border-bottom: 2px;
     border-bottom: solid;
     border-bottom-color: #003362;
-    font-size: 1.25em;
+    font-size: 1.2em;
     background-color: #fff;
     text-align: center;
     align-content: center;
 }
+.opcion{
+    border-radius: 25px;
+    color: #fff;
+    background-color: #FE4A49;
+    width: 130px;
+    height: 35px;;
+    border: 0;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.llenado{
+    background-color: #6B88CE;
+}
 .limite {
+    margin-left: 17px;
+    padding: 3px;
     background-color:#CDCDCD;
     width:100px;
     height: 20px;
@@ -105,9 +113,20 @@ input{
 }
 .grafica{
     background-color:#6B88CE;
-    width:0%;
+    width: 0%;
     height: 100%;
     border-radius: 7px;
+}
+.grafic2{
+    background-color:#FE4A49;
+}
+.izq{
+    float: left;
+    align-items: center;
+}
+.der{
+    float: right;
+    align-items: center;
 }
 
             /* pantalla pequeña */
