@@ -1,11 +1,137 @@
-
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1em;
+}
+.bienvenido{
+    text-align: center;
+    color: #003362;
+    font-family: 'Sofia', cursive;
+    font-size: 2em;
+    padding: 5px;
+    width: 100%;   
+}
+.contenedor{
+    box-sizing: border-box;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+.elem{
+    height: 80%;
+    padding: 10px;
+}
+.bus1{
+    /* flex-basis: 45%; */
+    display: flex;
+    box-shadow: 4px 4px 10px #2C3E50;
+    border: 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ffffff;
+    flex-basis: 40%;
+    align-items: center;
+}
+.opcion{
+    border-radius: 25px;
+    color: #fff;
+    background-color: #FE4A49;
+    width: 35%;
+    height: 40px;;
+    border: 0;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.bus2{
+    display: flex;
+    box-shadow: 4px 4px 10px #2C3E50;
+    border: 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ffffff;
+    flex-basis: 40%;
+    align-items: center;
+}   
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+p{
+    text-align: center;
+    color: rgb(41, 43, 49);
+    padding: 5px;
+    width: 100%;
+    font-size: 1.25em;
+}
+.bus{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    height: 80%;
+}
+input{
+    width: 60%;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    border: 0;
+    border-bottom: 2px;
+    border-bottom: solid;
+    border-bottom-color: #003362;
+    font-size: 1.25em;
+    background-color: #fff;
+    text-align: center;
+    align-content: center;
+}
 .limite {
-    background-color:grey;
+    background-color:#CDCDCD;
     width:100px;
     height: 20px;
+    border-radius: 7px;
 }
 .grafica{
-    background-color:blue;
+    background-color:#6B88CE;
     width:0%;
     height: 100%;
+    border-radius: 7px;
 }
+
+            /* pantalla pequeña */
+            @media all and (max-width: 400px){
+                .deco{flex-basis: 85%; /* adapta login */
+                    height: 90%;}
+                h1{font-size: 2.5em;} /* ajuste letra */
+                P{font-size: 1em;}
+                input{font-size: 1em;}
+            }
+            /* pantalla mediana */
+            @media all and (max-width: 700px){
+                .deco{flex-basis: 85%;
+                    height: 90%;}
+            }
+            /* pantalla grande */
+            @media all and (max-width: 1000px){
+                .iniciar{width: 75%;}
+                input, p{width: 95%;}
+            }
+            /* pantalla mas grande */
+            @media all and (min-width: 2500px){
+                p{font-size: 1.75em;}
+                input{font-size: 2em;
+                    height: 50px;}
+                .iniciar{height: 50px;}
+            }

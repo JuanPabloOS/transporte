@@ -5,7 +5,13 @@ const port = process.env.PORT || 3000;
 let server = http.createServer(app);
 
 app.use(express.static(__dirname + '/public'));
-app.get('/login', function(req, res) { res.sendFile('login.html'); });
+app.get('/login', function(req, res) { 
+  res.sendFile(__dirname+'/public/login.html'); 
+});
+
+app.get('/home', function(req, res) { 
+  res.sendFile(__dirname+'/public/index.html'); 
+});
 //usar socket.io
 const socketIO = require('socket.io');
 let io = socketIO(server);
@@ -14,8 +20,7 @@ let io = socketIO(server);
 io.on('connection', function(client){
     console.log('an user connected');
     //manejador de eventos
-    client.on('enviar',(data)=>{
-      console.log(data.bus)
+    client.on('enviar',(data)=>{      
       io.emit('enviar',{bus:data.bus,opcion:data.opcion});
 
     })
