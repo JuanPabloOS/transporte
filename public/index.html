@@ -1,46 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">
     <title>UAQ-IBUS</title>
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    
 </head>
 <body>
-    Bienvenido
-    <div id="bus1">
-        <div class="info">
-            <label for="">Primer Autobus</label><br>
-            <label for=""><input class="opcion" name="bus1" type="radio" onclick="actualizar(1,1)">No ha salido</label>
-            <div class="limite"><div class="grafica" id="b1-1"></div></div>
-            <br>
-            <label for=""><input class="opcion" name="bus1" type="radio" onclick="actualizar(1,2)">Está en camino</label>
-            <div class="limite"><div class="grafica" id="b1-2"></div></div>
-            <br>
-            <label for=""><input class="opcion" name="bus1" type="radio" onclick="actualizar(1,3)">Ya salió</label>
-            <div class="limite"><div class="grafica" id="b1-3"></div></div>
-            <br>
+    <div class="bienvenido"><p>BIENVENIDO</p></div>
+    <div class="contenedor">        
+        <div class="elem bus1">
+            <div class="bus">
+                <div class="top">
+                    <img src="img/logo.png" alt="">
+                    <p>Primer Autobus</p>
+                </div>
+                <input class="opcion" name="bus1" type="button" value="No ha salido" onclick="actualizar(1,1)">
+                <div class="limite"><div class="grafica" id="b1-1"></div></div>
+                <br>
+                <input class="opcion" name="bus1" type="button" value="Esta en camino" onclick="actualizar(1,2)">
+                <div class="limite"><div class="grafica" id="b1-2"></div></div>
+                <br>
+                <input class="opcion" name="bus1" type="button" value="Ya salio" onclick="actualizar(1,3)">
+                <div class="limite"><div class="grafica" id="b1-3"></div></div>
+                <br>
+            </div>
+        </div>
+        <div class="elem bus2">
+            <div class="bus">
+                <div class="top">
+                    <img src="img/logo.png" alt="">
+                    <p>Segundo Autobus</p>
+                </div>
+                <input class="opcion" name="bus2" type="button" value="No ha salido" onclick="actualizar(2,1)">
+                <div class="limite"><div class="grafica" id="b2-1"></div></div>
+                <br>
+                <input class="opcion" name="bus2" type="button" value="Esta en camino" onclick="actualizar(2,2)">
+                <div class="limite"><div class="grafica" id="b2-2"></div></div>
+                <br>
+                <input class="opcion" name="bus2" type="button" value="Ya salio" onclick="actualizar(2,3)">
+                <div class="limite"><div class="grafica" id="b2-3"></div></div>
+                <br>
+            </div>
         </div>
     </div>
-    <div id="bus2">
-        <div class="info">
-            <label for="">Segundo autobus</label><br>
-            <label for=""><input class="opcion" name="bus2" type="radio" onclick="actualizar(2,1)">No ha salido</label>
-            <div class="limite"><div class="grafica" id="b2-1"></div></div>
-            <br>
-            <label for=""><input class="opcion" name="bus2" type="radio" onclick="actualizar(2,2)">Está en camino</label>
-            <div class="limite"><div class="grafica" id="b2-2"></div></div>
-            <br>
-            <label for=""><input class="opcion" name="bus2" type="radio" onclick="actualizar(2,3)">Ya salió</label>
-            <div class="limite"><div class="grafica" id="b2-3"></div></div>
-            <br>
-        </div>
-    </div>
-    
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/socket-cliente.js"></script>
-  
 </body>
 </html>
