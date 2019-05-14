@@ -78,7 +78,6 @@ p{
 input{
     width: 60%;
     height: 30px;
-    padding-left: px;
     margin: 5px;
     border: 0;
     border-bottom: 2px;
@@ -128,29 +127,3 @@ input{
     float: right;
     align-items: center;
 }
-
-            /* pantalla pequeña */
-            @media all and (max-width: 400px){
-                .deco{flex-basis: 85%; /* adapta login */
-                    height: 90%;}
-                h1{font-size: 2.5em;} /* ajuste letra */
-                P{font-size: 1em;}
-                input{font-size: 1em;}
-            }
-            /* pantalla mediana */
-            @media all and (max-width: 700px){
-                .deco{flex-basis: 85%;
-                    height: 90%;}
-            }
-            /* pantalla grande */
-            @media all and (max-width: 1000px){
-                .iniciar{width: 75%;}
-                input, p{width: 95%;}
-            }
-            /* pantalla mas grande */
-            @media all and (min-width: 2500px){
-                p{font-size: 1.75em;}
-                input{font-size: 2em;
-                    height: 50px;}
-                .iniciar{height: 50px;}
-            }
