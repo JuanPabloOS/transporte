@@ -10,21 +10,18 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    b1:{
-        type: Boolean,
-        
-    },
-    b2:{
-        type:Boolean,
-        
-    }
 });
 
 const BusSchema = new Schema({
     idBus:{
-        type:Number
+        type:Number,
+        required:true
     },
     personas:{
+        type:Number,
+        required:true
+    },
+    espacio:{
         type:Number,
         required:true
     },

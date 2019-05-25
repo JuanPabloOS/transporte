@@ -78,8 +78,23 @@ function registrarBus(req,res){
         }
     })
 }
+
+function obtenerDatos(req,res){ 
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    Bus.find({},(error,result)=>{
+        if (error){
+            return null
+        }else{
+            return res.json({autobuses:result})
+        }
+        
+    })
+    
+}
 module.exports={
     signUp,
     logIn,
-    registrarBus
+    registrarBus,
+    obtenerDatos
 }
