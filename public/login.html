@@ -20,9 +20,9 @@
                         <p>¡Registrate!</p>
                     </div>
                 <input class="inDeco" type="text" name="user" id="" placeholder="Correo">
-                <input class="inDeco" type="password" name="pass" id="" placeholder="Contraseña">
-                <input class="inDeco" type="password" name="pass" id="" placeholder="Confirma contraseña">
-                <input class="registrar" type="button" value="Registrarme">
+                <input class="inDeco" type="password" name="pass" id="email" placeholder="Contraseña">
+                <input class="inDeco" type="password" name="pass" id="pass" placeholder="Confirma contraseña">
+                <input class="registrar" type="button" onclick="registrar()" value="Registrarme">
             </form>
         </div>
         <div class="elemPrin login">
@@ -33,11 +33,14 @@
                     <!-- <h1>Bienvenido</h1> -->
                     <p>Lorem ipsum dolor sit amet consecte.</p>
                 </div>
-                <input type="text" name="user" id="" placeholder="Correo">
-                <input type="password" name="pass" id="" placeholder="Contraseña">
-                <input class="iniciar" type="button" value="Iniciar sesión">
+                <input type="text" name="user" id="email2" placeholder="Correo">
+                <input type="password" name="pass" id="pass2" placeholder="Contraseña">
+                <input class="iniciar" type="button" onclick="login()" value="Iniciar sesión">
             </form>
         </div>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/peticiones.js"></script>
+    <script src="js/socket-cliente.js"></script>
 </body>
 </html>
