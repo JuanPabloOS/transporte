@@ -10,13 +10,13 @@
     <title>UAQ-IBUS</title>
 </head>
 <body>
-    <div class="bienvenido"><p>BIENVENIDO</p></div>
+    <div class="bienvenido"><p class="bienvenido">BIENVENIDO</p></div>
     <div class="contenedor">        
         <div class="elem bus1">
             <div class="bus">
                 <div class="top">
                     <img src="img/logo.png" alt="">
-                    <p>Primer Autobus</p>
+                    <p class="texto">Primer Autobus</p>
                 </div>
                 <div class="contOpciones">
                     <div class="izq">
@@ -49,7 +49,7 @@
             <div class="bus">
                 <div class="top">
                     <img src="img/logo.png" alt="">
-                    <p>Segundo Autobus</p>
+                    <p class="texto">Segundo Autobus</p>
                 </div>
                 <div class="contOpciones">
                     <div class="izq">
@@ -80,6 +80,7 @@
     </div>
     <button id="verTabla" onclick="hr()">Ver horarios</button>
     <div id="horarios">
+        <p class="texto" id="ahora"></p>
         <button id="xTabla" onclick="hr()">X</button>
         <table id="tabla">
             <tr><th>Salida de CU</th><th># de camiones(puede variar)</th><th>Salida de Juriquilla</th><th># de camiones(puede variar)</th></tr>
@@ -99,6 +100,7 @@
     <script type="text/javascript">
         var visible = false;
         function hr() {
+            actualiza();
             if (visible) {
                 hora = document.getElementById('horarios');
                 hora.style.visibility="hidden";
@@ -112,6 +114,11 @@
                 btn = document.getElementById('verTabla');
                 btn.style.visibility="hidden";
             }
+        }
+        function actualiza(){
+            var d = new Date();
+            var h = "Hora Actual: "+d.getHours() +":"+ d.getMinutes();
+            document.getElementById("ahora").innerHTML = h;
         }
     </script>
     <script src="/socket.io/socket.io.js"></script>
