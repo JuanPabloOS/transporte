@@ -5,6 +5,7 @@
     font-size: 1em;
 }
 .bienvenido{
+    position: fixed;
     text-align: center;
     color: #003362;
     font-family: 'Sofia', cursive;
@@ -84,7 +85,6 @@ input{
     border-bottom: solid;
     border-bottom-color: #003362;
     font-size: 1.2em;
-    background-color: #fff;
     text-align: center;
     align-content: center;
 }
@@ -126,4 +126,57 @@ input{
 .der{
     float: right;
     align-items: center;
+}
+#horarios{
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    visibility: hidden;
+    background-color: #CDCDCD;
+    opacity: 0.95;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+#xTabla{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    font-size: 1em;
+    background-color: #FE4A49;
+    margin-bottom: 15px;
+    text-align: center;
+    align-content: center;
+    border-bottom-right-radius: 7px;
+    color: white;
+}
+#verTabla{
+    position: fixed;
+    width: 120px;
+    height: 20px;
+    border: 0;
+    font-size: 1em;
+    background-color: #6B88CE;
+    text-align: center;
+    align-content: center;
+    border-radius: 7px;
+    color: white;
+    top: 92%;
+    left: 9%;
+}
+table, th, td {
+  border: 2px solid #6B88CE;
+  background-color: #CDCDCD;
+  opacity: 1;
+  text-align: center;
+}
+th, td{
+    padding: 5px;
 }
