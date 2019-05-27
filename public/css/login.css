@@ -4,13 +4,10 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1em;
 }
-.contenedor{
+body{
     box-sizing: border-box;
     padding: 10px;
-    position: absolute;
     width: 100%;
-    top: 0px;
-    bottom: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +30,9 @@
         background-color: #ffffff;
         flex-basis: 40%;
         align-items: center;
+        height: 95.775vh;
+        /* margin-top: auto;
+        margin-bottom: auto; */
     }
         .inDeco{
             width: 60%;
@@ -71,6 +71,7 @@
         background-color: #ffffff;
         flex-basis: 40%;
         align-items: center;
+        height: 95.775vh;
     }   
         /* h1{
             padding: 10px;
@@ -133,22 +134,22 @@
                 padding: 5px;
             }
             /* pantalla pequeña */
-            @media all and (max-width: 400px){
-                .deco{flex-basis: 85%; /* adapta login */
-                    height: 90%;}
-                .login{flex-basis: 85%; /* adapta login */
-                    height: 90%;}
-                h1{font-size: 2.5em;} /* ajuste letra */
+            @media screen and (max-width: 39.9375em){
+                .deco{flex-basis: 85%; 
+                    height: 95vh;}
+                .login{flex-basis: 85%; 
+                    height: 95vh;}
+                h1{font-size: 2.5em;} 
                 P{font-size: 1em;}
                 input{font-size: 1em;}
                 .registrar{align-self: center;}
             }
             /* pantalla mediana */
-            @media all and (max-width: 700px){
+            @media screen and (min-width: 40em) and (max-width: 63.9375em){
                 .deco{flex-basis: 85%;
-                    height: 90%;}
+                    height: 95vh;}
                 .login{flex-basis: 85%;
-                    height: 90%;}
+                    height: 95vh;}
                 .registrar{width: 70%;}
             }
             /* pantalla grande */
