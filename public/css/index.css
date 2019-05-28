@@ -91,7 +91,7 @@ input{
     font-size: 1.2em;
     text-align: center;
     align-content: center;
-    
+    cursor: pointer;
 }
 .opcion{
     border-radius: 25px;

@@ -17,11 +17,11 @@
                         <img src="img/user.png" alt="">
                         <h1 class="nombre">¿Eres nuevo?</h1>
                         <!-- <h1>Bienvenido</h1> -->
-                        <p>¡Registrate!</p>
+                        <p>¡Regístrate!</p>
                     </div>
-                <input class="inDeco" type="text" name="user" id="" placeholder="Correo">
-                <input class="inDeco" type="password" name="pass" id="email" placeholder="Contraseña">
-                <input class="inDeco" type="password" name="pass" id="pass" placeholder="Confirma contraseña">
+                <input class="inDeco" type="text" name="user" id="email" placeholder="Correo" required>
+                <input class="inDeco" type="password" name="pass" id="pass" placeholder="Contraseña" required>
+                <input class="inDeco" type="password" name="pass" id="verificarPass" placeholder="Confirma contraseña" required>
                 <input class="registrar" type="button" onclick="registrar()" value="Registrarme">
             </form>
         </div>
@@ -33,14 +33,14 @@
                     <!-- <h1>Bienvenido</h1> -->
                     <!-- <p>Lorem ipsum dolor sit amet consecte.</p> -->
                 </div>
-                <input type="text" name="user" id="email2" placeholder="Correo">
-                <input type="password" name="pass" id="pass2" placeholder="Contraseña">
+                <input type="text" name="user" id="email2" placeholder="Correo" required>
+                <input type="password" name="pass" id="pass2" placeholder="Contraseña" required>
                 <input class="iniciar" type="button" onclick="login()" value="Iniciar sesión">
             </form>
         </div>
     <!-- </div> -->
-    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
     <script src="js/peticiones.js"></script>
-    <script src="js/socket-cliente.js"></script>
+    <!-- <script src="js/socket-cliente.js"></script> -->
 </body>
 </html>
