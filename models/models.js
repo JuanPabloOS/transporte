@@ -4,12 +4,33 @@ const db = require('../db.js');
 const UserSchema = new Schema({
     username:{
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
     password:{
         type: String,
         required: true
     },
+    bus1:{
+        type:Boolean,
+        default:false,
+        required: true
+    },
+    bus2:{
+        type:Boolean,
+        default:false,
+        required: true
+    },
+    bus1Espacio:{
+        type:Boolean,
+        default: false,
+        required:true
+    },
+    bus2Espacio:{
+        type:Boolean,
+        default: false,
+        required:true
+    }
 });
 
 const BusSchema = new Schema({

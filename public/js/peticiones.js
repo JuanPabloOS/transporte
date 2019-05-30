@@ -12,9 +12,10 @@ function login(){
             console.log(respuesta)         
             if(respuesta.status == 1){
                 //alert(`¿UAQ's UP ${respuesta.nombre}?`);                  
-                window.localStorage.setItem("id",respuesta.result["_id"]);
+                window.localStorage.setItem("username",respuesta.result["username"]);
                 console.log(localStorage.getItem("id")); 
-                localStorage.setItem("session","1");             
+                localStorage.setItem("session","1");                    
+                //establecer valores          
                 window.location.href = `/`;
             }
             if(respuesta.status == 0){                
@@ -42,8 +43,7 @@ function registrar(){
             if (http.readyState == 4 && http.status == 200) {                                    
                 var respuesta = JSON.parse(this.responseText);            
                 if(respuesta.status == 1){
-                    alert("Ya estás registrado");                    
-                    window.location.href = `/`;
+                    alert("Ya estás registrado");                                        
                 }
                 if(respuesta.status == 0){                
                     alert("Registro fallido");
