@@ -86,6 +86,14 @@ socket.on('enviarDatos',(data)=>{
     console.log(JSON.parse(data.bus1[0]));
     console.log(JSON.parse(data.bus2[0]));
 })
+var horario = 0;
+socket.on('reset',(data)=>{
+    console.log(data.num);
+    console.log(horario)
+    if(data.num!=horario){
+        reset();
+    }    
+})
 
 //esta función se manda llamar cuando se selecciona una opción
 //la varibale bus indica si es el autobús 1 o 2
@@ -176,16 +184,7 @@ function llenarGraficas(bus){
         document.getElementById("b2-6").style.width = contadorBus2Espacio[2]*100/personasB2Espacio+"%"
     }
 }
-function reset(){
-    personasB1 = 0;
-    personasB2 = 0;
-    personasB1Espacio = 0;
-    personasB2Espacio = 0;
-    //contador de las opciones seleccionadas por las personas
-    contadorBus1 = [0,0,0];
-    contadorBus2 = [0,0,0];
-    contadorBus1Espacio = [0,0,0];
-    contadorBus2Espacio = [0,0,0];
+function reset(){    
     //Estas iables indican para cuál autobús ha opinado la persona
     //si está en true significa que ha opinado para dicho autobús
     //Ha opinado sobre si ya salió o no el autobus
@@ -198,6 +197,7 @@ function reset(){
     window.localStorage.setItem("bus1Espacio",false)
     window.localStorage.setItem("bus2",false)
     window.localStorage.setItem("bus2Espacio",false)
+    obtenerYActualizar();
     console.log("listo")
 }
 function cerrarSesion(){

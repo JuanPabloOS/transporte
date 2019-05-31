@@ -1,4 +1,16 @@
-
+document.getElementById("email").addEventListener("keypress", function(event){
+    console.log("entró")
+    // if (event.keyCode === 13) {
+        // event.preventDefault();
+        var entrada = document.getElementById("email");
+        var cuerpotxt = entrada.value.replace(/\s/g, "");   
+        document.getElementById("email").value = cuerpotxt;    
+        console.log(cuerpotxt)
+    if(cuerpotxt != ""){
+        console.log(cuerpotxt) 
+    }       
+    // }    
+});
 // Enviar datos del usuario para el inicio de sesión
 //verificar credenciales
 //dar retroalimentación
@@ -56,3 +68,4 @@ function registrar(){
         http.send("&username="+email+"&password="+pass);
         }    
 }
+
