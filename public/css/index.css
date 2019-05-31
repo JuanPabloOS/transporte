@@ -1,21 +1,90 @@
 *{
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1em;
     outline: none;
 }
-.bienvenido{
-    position: fixed;
-    text-align: center;
-    color: #003362;
-    font-family: 'Sofia', cursive;
-    font-size: 1.5em;
-    padding: 5px;
-    width: 100%;   
+button{
+    cursor: pointer;
 }
+.navBar{
+    position: fixed;
+    padding: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: #6B88CE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#user{
+    color: black;
+    //font-family: 'Sofia';
+    font-size: 1.5em;
+    text-align: center;
+    float: left;
+}
+#destino{
+    color: black;
+    //font-family: 'Sofia';
+    font-size: 2em;
+    width: 80%;
+    text-align: center;
+}
+#navBtn{
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+#navBtnImg{
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-position:center;
+    background-size:auto;
+    background-attachment:fixed;
+
+}
+#navDesp{
+    z-index: 1;
+    float: right;
+    position: relative;
+    margin-top: 60px;
+    height: 80px;
+    width: 150px;
+    background-color: #6B88CE;
+    visibility: hidden;
+    border-radius: 0px 0px 0px 5px;
+}
+#verTabla{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border: 0;
+    font-size: 1em;
+    background-color: #FE4A49;
+    text-align: center;
+    align-content: center;
+    color: white;
+    margin-top: 5px;
+}
+#cerrarS{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border: 0;
+    font-size: 1em;
+    background-color: #FE4A49;
+    text-align: center;
+    align-content: center;
+    color: white;
+    margin-top: 5px;
+}   
 .texto{
-    font-family: 'Sofia', cursive;
+    //font-family: 'Sofia';
 }
 .contenedor{
     box-sizing: border-box;
@@ -28,6 +97,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap-reverse;
+    margin-top: 15px;
 }
 .contOpciones{
     width: 65%;
@@ -161,34 +231,6 @@ input{
     align-content: center;
     border-bottom-right-radius: 7px;
     color: white;
-}
-#verTabla{
-    position: fixed;
-    width: 120px;
-    height: 20px;
-    border: 0;
-    font-size: 1em;
-    background-color: #6B88CE;
-    text-align: center;
-    align-content: center;
-    border-radius: 7px;
-    color: white;
-    top: 92%;
-    left: 9%;
-}
-#cerrarS{
-    position: fixed;
-    width: 120px;
-    height: 20px;
-    border: 0;
-    font-size: 1em;
-    background-color: #FE4A49;
-    text-align: center;
-    align-content: center;
-    border-radius: 7px;
-    color: white;
-    top: 92%;
-    left: calc(9% + 125px);
 }
 #ahora{
     color: #FE4A49;

@@ -10,12 +10,23 @@
     <title>UAQ-IBUS</title>
 </head>
 <body>
-    <div class="bienvenido"><p class="bienvenido">BIENVENIDO</p></div>
+    <div class="navBar">
+        <div id="user">USUARIO</div>
+        <div class="texto" id="destino">CU - JURIQUILLA</div>
+        <button id="navBtn" onclick="verDesp()">
+            <img src="img/flecha.svg" id="navBtnImg" >
+        </button>
+    </div>
+
+    <div id="navDesp">
+        <button id="cerrarS" onclick="cerrarSesion()">Cerrar sesion</button>
+        <button id="verTabla" onclick="hr()">Ver horarios</button>
+    </div>
     <div class="contenedor">        
         <div class="elem bus1">
             <div class="bus">
                 <div class="top">
-                    <img src="img/logo.png" alt="">
+                    <img src="img/logo.png" alt="" >
                     <p class="texto">Primer Autobús</p>
                 </div>
                 <div class="contOpciones">
@@ -78,8 +89,6 @@
             </div>
         </div>
     </div>
-    <button id="verTabla" onclick="hr()">Ver horarios</button>
-    <button id="cerrarS" onclick="cerrarSesion()">Cerrar sesion</button>
     <div id="horarios">
         <p class="texto" id="ahora"></p>
         <button id="xTabla" onclick="hr()">X</button>
@@ -100,26 +109,39 @@
     </div>
     <script type="text/javascript">
         var visible = false;
+        var visibleDesp = false;
         function hr() {
             actualiza();
             if (visible) {
                 hora = document.getElementById('horarios');
                 hora.style.visibility="hidden";
                 visible = false;
-                btn = document.getElementById('verTabla');
-                btn.style.visibility="unset";
+                /*btn = document.getElementById('verTabla');
+                btn.style.visibility="unset";*/
             } else {
                 hora = document.getElementById('horarios');
                 hora.style.visibility="unset";
                 visible = true;
-                btn = document.getElementById('verTabla');
-                btn.style.visibility="hidden";
+                /*btn = document.getElementById('verTabla');
+                btn.style.visibility="hidden";*/
+                verDesp()
             }
         }
         function actualiza(){
             var d = new Date();
             var h = "Hora Actual: "+d.getHours() +":"+ d.getMinutes();
             document.getElementById("ahora").innerHTML = h;
+        }
+        function verDesp() {
+            if (visibleDesp) {
+                desp = document.getElementById('navDesp');
+                desp.style.visibility="hidden";
+                visibleDesp = false;
+            } else {
+                desp = document.getElementById('navDesp');
+                desp.style.visibility="unset";
+                visibleDesp = true;
+            }
         }
     </script>
     <script src="/socket.io/socket.io.js"></script>
