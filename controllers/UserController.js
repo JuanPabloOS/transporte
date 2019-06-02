@@ -6,6 +6,7 @@ function signUp(req, res){
     let newUser = new User();
     newUser.username = req.body.username;
     newUser.password = req.body.password;
+    
     newUser.save((error)=>{
         if(error){
             return res.json({
@@ -38,7 +39,7 @@ function logIn(req,res){
                 res.json({
                     status:0
                 })
-            }else{
+            }else{                
                 res.json({
                     status:1,
                     result
@@ -87,14 +88,26 @@ function obtenerDatos(req,res){
             return null
         }else{
             return res.json({autobuses:result})
-        }
-        
-    })
+        }        
+    })    
+}
+
+function datosUsuario(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     
+    User.findOne({username:req.body.username},(error,result)=>{
+        if (error) {
+            return null;
+        }else{            
+            return res.json({usuario:result});
+        }
+    })
 }
 module.exports={
     signUp,
     logIn,
     registrarBus,
-    obtenerDatos
+    obtenerDatos,
+    datosUsuario
 }
