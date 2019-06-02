@@ -34,7 +34,7 @@ function reset(num){
     horario=num;
     Bus.updateMany({}, { $set: { personas:0,espacio:0,opcion1:0,opcion2:0,opcion3:0,opcion4:0,opcion5:0,opcion6:0 }},(error,res)=>{
       if(error){throw error}
-      console.log(res)
+      // console.log(res)
     });
   }  
 }
@@ -50,7 +50,7 @@ io.on('connection', function(client){
       var d = new Date();
       var h = d.getHours();
       var m = d.getMinutes();
-      console.log(`${h}-${m}`);
+      // console.log(`${h}-${m}`);
       if(h>=18 && m>=45){
         //juriquilla 19:10   
         reset(1);
@@ -95,7 +95,7 @@ io.on('connection', function(client){
         //cu 13:40
         reset(11);
         io.emit('reset',{horario:'CU - Juriquilla salida: 13:40',num:11});
-      }else if(h>=12 && m>=30){
+      }else if(h>=12 && m>=33){
        //juriquilla 13:00 
        reset(12);
        io.emit('reset',{horario:'Juriquilla - CU salida: 13:00',num:12});
@@ -128,7 +128,7 @@ io.on('connection', function(client){
     intervalFunc();
     setInterval(intervalFunc, 60000);
     client.on('enviar',(data)=>{   
-      console.log(data)               
+      // console.log(data)               
         if(data.status==false || data.status == 'false'){
           // el usuario acaba de participar
           // sumar a personas

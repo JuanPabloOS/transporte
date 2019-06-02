@@ -30,6 +30,7 @@ window.onload=function(){
     var session = localStorage.getItem("session");
     if(session){
         username = localStorage.getItem("username");
+        document.getElementById("user").innerHTML = username;
         datosUsuario()
         obtenerYActualizar()                
     }else{        
@@ -42,7 +43,7 @@ function datosUsuario(){
     http.onreadystatechange=function(){
         if(http.readyState==4 && http.status == 200){
             var respuesta = JSON.parse(this.responseText);
-            console.log(respuesta);
+            // console.log(respuesta);
         }
     }
     http.open("POST","/transporte/datosUsuario",true);
@@ -50,7 +51,7 @@ function datosUsuario(){
     http.send("username="+username);      
 }
 
-function obtenerYActualizar(){
+function obtenerYActualizar(){    
     var http = new XMLHttpRequest();
     http.onreadystatechange = function(){
         if (http.readyState == 4 && http.status == 200) {                                    
@@ -81,16 +82,14 @@ function obtenerYActualizar(){
     http.send();
 }
 
-///esta funcion se recibe apenas se ingresa al servidor
-socket.on('enviarDatos',(data)=>{
-    console.log(JSON.parse(data.bus1[0]));
-    console.log(JSON.parse(data.bus2[0]));
-})
 var horario = 0;
 socket.on('reset',(data)=>{
-    console.log(data.num);
-    console.log(horario)
+    // console.log(data.num);
+    // console.log(horario)
     if(data.num!=horario){
+        console.log("cambio de horario")
+        horario=data.num;
+        document.getElementById("destino").innerHTML = data.horario;
         reset();
     }    
 })
@@ -150,7 +149,7 @@ function actualizar(bus,opcion){
 // var personasB1Espacio = 0;
 // var personasB2Espacio = 0;
 socket.on('enviar',(data)=>{
-   obtenerYActualizar()
+   obtenerYActualizar();   
 })
 
 //actualiza la gráficas
@@ -198,7 +197,9 @@ function reset(){
     window.localStorage.setItem("bus2",false)
     window.localStorage.setItem("bus2Espacio",false)
     obtenerYActualizar();
-    console.log("listo")
+    llenarGraficas(1);
+    llenarGraficas(2);
+    // console.log("reset listo")
 }
 function cerrarSesion(){
     localStorage.removeItem("session");
