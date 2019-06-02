@@ -5,9 +5,9 @@ document.getElementById("email").addEventListener("keypress", function(event){
         var entrada = document.getElementById("email");
         var cuerpotxt = entrada.value.replace(/\s/g, "");   
         document.getElementById("email").value = cuerpotxt;    
-        console.log(cuerpotxt)
+        //console.log(cuerpotxt)
     if(cuerpotxt != ""){
-        console.log(cuerpotxt) 
+        //console.log(cuerpotxt) 
     }       
     // }    
 });
@@ -27,6 +27,7 @@ function login(){
                 window.localStorage.setItem("username",respuesta.result["username"]);
                 console.log(localStorage.getItem("id")); 
                 localStorage.setItem("session","1");                    
+                
                 //establecer valores          
                 window.location.href = `/`;
             }

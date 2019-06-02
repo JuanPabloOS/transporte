@@ -30,6 +30,26 @@ const UserSchema = new Schema({
         type:Boolean,
         default: false,
         required:true
+    },
+    b1Estado:{
+        type:Number,
+        required:true,
+        default:0
+    },
+    b2Estado:{
+        type:Number,
+        required:true,
+        default:0
+    },
+    b1Espacio:{
+        type:Number,
+        required:true,
+        default:0
+    },
+    b2Espacio:{
+        type:Number,
+        required:true,
+        default:0
     }
 });
 
@@ -40,29 +60,43 @@ const BusSchema = new Schema({
     },
     personas:{
         type:Number,
-        required:true
+        required:true,
+        default:0
     },
     espacio:{
         type:Number,
-        required:true
+        required:true,
+        default:0
     },
     opcion1:{
-        type:Number
+        type:Number,
+        required:true,
+        default:0
     },
     opcion2:{
-        type:Number
+        type:Number,
+        required:true,
+        default:0
     },
     opcion3:{
-        type:Number
+        type:Number,
+        required:true,
+        default:0
     },
     opcion4:{
-        type:Number
+        type:Number,
+        required:true,
+        default:0
     },
     opcion5:{
-        type:Number
+        type:Number,
+        required:true,
+        default:0
     },
     opcion6:{
-        type:Number
+        type:Number,
+        required:true,
+        default:0
     },
 })
 

@@ -11,15 +11,16 @@
 </head>
 <body>
     <div class="navBar">
-        <div id="user">USUARIO</div>
+        <div><img class="icon-img" src="img/userprofile.png" alt=""><div id="user">USUARIO</div></div>
+        
         <div class="texto" id="destino">CU - JURIQUILLA</div>
         <button id="navBtn" onclick="verDesp()">
-            <img src="img/flecha.svg" id="navBtnImg" >
+            <img src="img/white-flecha.svg" id="navBtnImg" >
         </button>
     </div>
-    <div id="navDesp">
-        <button id="cerrarS" onclick="cerrarSesion()">Cerrar sesion</button>
-        <button id="verTabla" onclick="hr()">Ver horarios</button>
+    <div id="navDesp">                    
+        <button id="cerrarS" onclick="cerrarSesion()"><img class="icon-img" src="img/logout.png" alt="">Cerrar sesión</button>    
+        <button id="verTabla" onclick="hr()"><img class="icon-img" src="img/calendar.png" alt="">Ver horarios</button>                
     </div>
     <div class="contenedor">        
         <div class="elem bus1">
@@ -36,7 +37,7 @@
                             <input class="opcion" name="bus1" type="button" value="En camino" onclick="actualizar(1,2)">
                             <div class="limite"><div class="grafica" id="b1-2"></div></div>
                             <br>
-                            <input class="opcion" name="bus1" type="button" value="Ya salió" onclick="actualizar(1,3)">
+                            <input class="opcion" name="bus1" type="button" value="Ya llegó" onclick="actualizar(1,3)">
                             <div class="limite"><div class="grafica" id="b1-3"></div></div>
                             <br>
                         </div>
@@ -68,7 +69,7 @@
                             <input class="opcion" name="bus2" type="button" value="En camino" onclick="actualizar(2,2)">
                             <div class="limite"><div class="grafica" id="b2-2"></div></div>
                             <br>
-                            <input class="opcion" name="bus2" type="button" value="Ya salió" onclick="actualizar(2,3)">
+                            <input class="opcion" name="bus2" type="button" value="Ya llegó" onclick="actualizar(2,3)">
                             <div class="limite"><div class="grafica" id="b2-3"></div></div>
                             <br>
                         </div>
