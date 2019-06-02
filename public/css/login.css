@@ -1,7 +1,7 @@
 *{
     padding: 0px;
     margin: 0px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1em;
 }
 body{
@@ -11,82 +11,61 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap-reverse;
+    height: 100vh;
+    background: #f3f3f3;
 }
     .elemPrin{
-        height: 80%;
         padding: 10px;
     }
     .deco{
-        /* flex-basis: 45%; */
         background-image: url("../img/deco.jpg");
         background-repeat: no-repeat;
-        background-size: 200%;
+        background-size: cover;
         display: flex;
-        box-shadow: 4px 4px 10px #2C3E50;
-        border: 1px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        background-color: #ffffff;
         flex-basis: 40%;
         align-items: center;
-        height: 95.775vh;
-        /* margin-top: auto;
-        margin-bottom: auto; */
+        height: 90%;
     }
         .inDeco{
-            width: 60%;
-            height: 30px;
-            padding: 5px;
-            margin: 5px;
             border: 0;
             border-radius: 15px;
-            text-align: center;
-            /* border-bottom: 2px; */
-            /* border-bottom: solid; */
-            /* border-bottom-color: #003362; */
-            font-size: 1.25em;
             color: rgb(41, 43, 49);
             background-color: rgba(255, 255, 255, .6);
             outline:none;
         }
-            .registrar{
+            .boton{
                 border-radius: 25px;
                 color: #fff;
-                background-color: #FE4A49;
+                background-color: #FF5A74;
                 width: 35%;
                 height: 40px;;
                 border: 0;
                 padding: 5px;
-                align-self: flex-end;
+                font-weight: 700;
+            }
+            .registrar{
+                align-self: center;
             }
             .deco .nombre{
                 color: #fff;
             }
     .login{
         display: flex;
-        box-shadow: 4px 4px 10px #2C3E50;
-        border: 1px;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         background-color: #ffffff;
         flex-basis: 40%;
         align-items: center;
-        height: 95.775vh;
+        height: 90%;
     }   
-        /* h1{
-            padding: 10px;
-            align-self: center;
-            text-align: center;
-            font-size: 3em;
-            font-family: 'Sofia', cursive;
-            color: #31353D;
-        } */
         .texto{
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+        }
+        .texto > p{
+            font-weight: 700;
         }
         .nombre{
             text-align: center;
@@ -111,7 +90,7 @@ body{
             justify-content: space-around;
             align-items: center;
             flex-grow: 1;
-            height: 80%;
+            height: calc(100% - 40px);
         }
         input{
             width: 60%;
@@ -121,52 +100,77 @@ body{
             border: 0;
             border-bottom: 2px;
             border-bottom: solid;
-            border-bottom-color: #003362;
+            border-bottom-color: #656880;
             font-size: 1.25em;
             background-color: #fff;
-            outline:none
+            text-align: center;
+            outline: none;
         }
-            .iniciar{
-                border-radius: 25px;
-                color: #fff;
-                background-color: #FE4A49;
-                width: 35%;
-                height: 40px;;
-                border: 0;
-                padding: 5px;
-            }
-            /* pantalla pequeña */
-            @media screen and (max-width: 39.9375em){
-                .deco{flex-basis: 85%; 
-                    height: 95vh;}
-                .login{flex-basis: 85%; 
-                    height: 95vh;}
-                h1{font-size: 2.5em;} 
-                P{font-size: 1em;}
-                input{font-size: 1em;}
-                .registrar{align-self: center;}
-            }
-            /* pantalla mediana */
-            @media screen and (min-width: 40em) and (max-width: 63.9375em){
-                .deco{flex-basis: 85%;
-                    height: 95vh;}
-                .login{flex-basis: 85%;
-                    height: 95vh;}
-                .registrar{width: 70%;}
-            }
-            /* pantalla grande */
-            @media all and (max-width: 1000px){
-                .iniciar{width: 75%;}
-                input, p{width: 95%;}
-                .inDeco{width: 95%;}
-                
-                .registrar{width: 55%;}
-            }
-            /* pantalla mas grande */
-            @media all and (min-width: 2500px){
-                .nombre{font-size: 4em;}
-                p{font-size: 1.75em;}
-                input{font-size: 2em;
-                    height: 50px;}
-                .iniciar{height: 50px;}
-            }
+            
+@media screen and (max-width: 39.9375em){
+    body{
+        height: auto;
+        flex-flow: column-reverse wrap;
+    }
+    .login{
+        margin-top: .75rem; 
+    }
+    .elemPrin{
+        height: auto;
+        margin-bottom: 3rem;
+        width: calc(95% - 2.5rem);
+        border-radius: 10px;
+    }
+    form{
+        justify-content: center;
+        height: auto;
+        margin-top: 3rem; 
+        margin-bottom: 1.5rem;
+    }
+    input{
+        width: 80%;
+        margin-top: 2.75rem;
+        margin-bottom: 2.75rem; 
+    }
+    .deco > form > input{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem; 
+    }
+    .boton{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 40rem) and (max-width: 63.9375rem){
+    body{
+        height: auto;
+        flex-flow: column-reverse wrap;
+    }
+    .login{
+        margin-top: .75rem; 
+    }
+    .elemPrin{
+        height: auto;
+        margin-bottom: 3rem;
+        width: calc(95% - 2.5rem);
+        border-radius: 10px;
+    }
+    form{
+        justify-content: center;
+        height: auto;
+        margin-top: 3rem; 
+        margin-bottom: 1.5rem;
+    }
+    input{
+        width: 80%;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem; 
+    }
+    .boton{
+        width: 40%;
+    }
+    .deco > form > input{
+        margin-top: 1rem;
+        margin-bottom: 1rem; 
+    }
+}
+            

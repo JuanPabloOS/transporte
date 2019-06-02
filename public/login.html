@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/login.css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
-    <!-- <div class="contenedor"> -->
         <div class="elemPrin deco">
             <form action="">
                 <div class="texto">
                         <img src="img/user.png" alt="">
                         <h1 class="nombre">¿Eres nuevo?</h1>
-                        <!-- <h1>Bienvenido</h1> -->
-                        <p>¡Regístrate!</p>
+                        <p>¡Registrate!</p>
                     </div>
-                <input class="inDeco" type="text" name="user" id="email" placeholder="Correo" required>
-                <input class="inDeco" type="password" name="pass" id="pass" placeholder="Contraseña" required>
-                <input class="inDeco" type="password" name="pass" id="verificarPass" placeholder="Confirma contraseña" required>
-                <input class="registrar" type="button" onclick="registrar()" value="Registrarme">
+                <input class="inDeco" type="text" name="user" id="" placeholder="Usuario">
+                <input class="inDeco" type="password" name="pass" id="email" placeholder="Contraseña">
+                <input class="inDeco" type="password" name="pass" id="pass" placeholder="Confirma contraseña">
+                <input class="boton registrar" type="button" onclick="registrar()" value="Registrarme">
             </form>
         </div>
         <div class="elemPrin login">
@@ -30,16 +28,13 @@
                 <div class="texto">
                     <img src="img/logo.png" alt="">
                     <h1 class="nombre">UAQI-BUS</h1>
-                    <!-- <h1>Bienvenido</h1> -->
-                    <!-- <p>Lorem ipsum dolor sit amet consecte.</p> -->
                 </div>
-                <input type="text" name="user" id="email2" placeholder="Correo" required>
-                <input type="password" name="pass" id="pass2" placeholder="Contraseña" required>
-                <input class="iniciar" type="button" onclick="login()" value="Iniciar sesión">
+                <input type="text" name="user" id="email2" placeholder="Usuario">
+                <input type="password" name="pass" id="pass2" placeholder="Contraseña">
+                <input class="boton iniciar" type="button" onclick="login()" value="Iniciar sesión">
             </form>
         </div>
-    <!-- </div> -->
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
     <script src="js/peticiones.js"></script>
     <!-- <script src="js/socket-cliente.js"></script> -->
 </body>

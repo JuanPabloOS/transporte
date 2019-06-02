@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">
     <title>UAQ-IBUS</title>
 </head>
@@ -17,7 +17,6 @@
             <img src="img/flecha.svg" id="navBtnImg" >
         </button>
     </div>
-
     <div id="navDesp">
         <button id="cerrarS" onclick="cerrarSesion()">Cerrar sesion</button>
         <button id="verTabla" onclick="hr()">Ver horarios</button>
@@ -29,31 +28,30 @@
                     <img src="img/logo.png" alt="" >
                     <p class="texto">Primer Autobús</p>
                 </div>
-                <div class="contOpciones">
-                    <div class="izq">
-                        <input class="opcion" name="bus1" type="button" value="No ha salido" onclick="actualizar(1,1)">
-                        <div class="limite"><div class="grafica" id="b1-1"></div></div>
-                        <br>
-                        <input class="opcion" name="bus1" type="button" value="En camino" onclick="actualizar(1,2)">
-                        <div class="limite"><div class="grafica" id="b1-2"></div></div>
-                        <br>
-                        <input class="opcion" name="bus1" type="button" value="Ya salió" onclick="actualizar(1,3)">
-                        <div class="limite"><div class="grafica" id="b1-3"></div></div>
-                        <br>
+                    <div class="contOpciones">
+                        <div class="izq">
+                            <input class="opcion" name="bus1" type="button" value="No ha salido" onclick="actualizar(1,1)">
+                            <div class="limite"><div class="grafica" id="b1-1"></div></div>
+                            <br>
+                            <input class="opcion" name="bus1" type="button" value="En camino" onclick="actualizar(1,2)">
+                            <div class="limite"><div class="grafica" id="b1-2"></div></div>
+                            <br>
+                            <input class="opcion" name="bus1" type="button" value="Ya salió" onclick="actualizar(1,3)">
+                            <div class="limite"><div class="grafica" id="b1-3"></div></div>
+                            <br>
+                        </div>
+                        <div class="der">
+                            <input class="opcion llenado" name="bus1" type="button" value="Casi vacío" onclick="actualizar(1,4)">
+                            <div class="limite"><div class="grafica grafic2" id="b1-4"></div></div>
+                            <br>
+                            <input class="opcion llenado" name="bus1" type="button" value="Medio lleno" onclick="actualizar(1,5)">
+                            <div class="limite"><div class="grafica grafic2" id="b1-5"></div></div>
+                            <br>
+                            <input class="opcion llenado" name="bus1" type="button" value="Lleno" onclick="actualizar(1,6)">
+                            <div class="limite"><div class="grafica grafic2" id="b1-6"></div></div>
+                            <br>
+                        </div>
                     </div>
-                    <div class="der">
-                        <input class="opcion llenado" name="bus1" type="button" value="Casi vacío" onclick="actualizar(1,4)">
-                        <div class="limite"><div class="grafica grafic2" id="b1-4"></div></div>
-                        <br>
-                        <input class="opcion llenado" name="bus1" type="button" value="Medio lleno" onclick="actualizar(1,5)">
-                        <div class="limite"><div class="grafica grafic2" id="b1-5"></div></div>
-                        <br>
-                        <input class="opcion llenado" name="bus1" type="button" value="Lleno" onclick="actualizar(1,6)">
-                        <div class="limite"><div class="grafica grafic2" id="b1-6"></div></div>
-                        <br>
-                    </div>
-                </div>
-                
             </div>
         </div>
         <div class="elem bus2">
@@ -62,30 +60,30 @@
                     <img src="img/logo.png" alt="">
                     <p class="texto">Segundo Autobús</p>
                 </div>
-                <div class="contOpciones">
-                    <div class="izq">
-                        <input class="opcion" name="bus2" type="button" value="No ha salido" onclick="actualizar(2,1)">
-                        <div class="limite"><div class="grafica" id="b2-1"></div></div>
-                        <br>
-                        <input class="opcion" name="bus2" type="button" value="En camino" onclick="actualizar(2,2)">
-                        <div class="limite"><div class="grafica" id="b2-2"></div></div>
-                        <br>
-                        <input class="opcion" name="bus2" type="button" value="Ya salió" onclick="actualizar(2,3)">
-                        <div class="limite"><div class="grafica" id="b2-3"></div></div>
-                        <br>
+                    <div class="contOpciones">
+                        <div class="izq">
+                            <input class="opcion" name="bus2" type="button" value="No ha salido" onclick="actualizar(2,1)">
+                            <div class="limite"><div class="grafica" id="b2-1"></div></div>
+                            <br>
+                            <input class="opcion" name="bus2" type="button" value="En camino" onclick="actualizar(2,2)">
+                            <div class="limite"><div class="grafica" id="b2-2"></div></div>
+                            <br>
+                            <input class="opcion" name="bus2" type="button" value="Ya salió" onclick="actualizar(2,3)">
+                            <div class="limite"><div class="grafica" id="b2-3"></div></div>
+                            <br>
+                        </div>
+                        <div class="der">
+                            <input class="opcion llenado" name="bus2" type="button" value="Casi vacío" onclick="actualizar(2,4)">
+                            <div class="limite"><div class="grafica grafic2" id="b2-4"></div></div>
+                            <br>
+                            <input class="opcion llenado" name="bus2" type="button" value="Medio lleno" onclick="actualizar(2,5)">
+                            <div class="limite"><div class="grafica grafic2" id="b2-5"></div></div>
+                            <br>
+                            <input class="opcion llenado" name="bus2" type="button" value="Lleno" onclick="actualizar(2,6)">
+                            <div class="limite"><div class="grafica grafic2" id="b2-6"></div></div>
+                            <br>
+                        </div>
                     </div>
-                    <div class="der">
-                        <input class="opcion llenado" name="bus2" type="button" value="Casi vacío" onclick="actualizar(2,4)">
-                        <div class="limite"><div class="grafica grafic2" id="b2-4"></div></div>
-                        <br>
-                        <input class="opcion llenado" name="bus2" type="button" value="Medio lleno" onclick="actualizar(2,5)">
-                        <div class="limite"><div class="grafica grafic2" id="b2-5"></div></div>
-                        <br>
-                        <input class="opcion llenado" name="bus2" type="button" value="Lleno" onclick="actualizar(2,6)">
-                        <div class="limite"><div class="grafica grafic2" id="b2-6"></div></div>
-                        <br>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
