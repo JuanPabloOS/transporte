@@ -1,84 +1,119 @@
 *{
     padding: 0px;
     margin: 0px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1em;
     outline: none;
 }
+body{
+    background: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - .625rem);
+    width: calc(100vw - .3125rem);
+}
+div{
+    box-sizing: border-box;
+}
 .bienvenido{
-    position: fixed;
     text-align: center;
     color: #003362;
-    font-family: 'Sofia', cursive;
-    font-size: 1.5em;
     padding: 5px;
-    width: 100%;   
 }
-.texto{
-    font-family: 'Sofia', cursive;
-}
-.contenedor{
-    box-sizing: border-box;
-    padding: 10px;
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    bottom: 0px;
+    .bienvenido > p{
+        font-family: 'Sofia', cursive;
+        font-size: 2.5em;
+    }
+.buses{
+    padding: .625rem;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap-reverse;
+    flex-grow: 10;
 }
-.contOpciones{
-    width: 65%;
-}
-.elem{
-    height: 80%;
-    padding: 10px;
-}
-.bus1{
-    /* flex-basis: 45%; */
+    .elem{
+        height: 95%;
+        padding: 10px;
+        display: flex;
+        background-color: #ffffff;
+        flex-basis: 40%;
+        align-items: center;
+    }   
+        .texto{
+            font-family: 'Sofia', cursive;
+            font-size: 2rem;
+        }
+        .bus{
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow: 1;
+            height: calc(100% - 1.25rem);
+        }  
+.botones{
+    padding: .625rem;
     display: flex;
-    box-shadow: 4px 4px 10px #2C3E50;
-    border: 1px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: #ffffff;
-    flex-basis: 40%;
-    align-items: center;
-}
-.bus2{
-    display: flex;
-    box-shadow: 4px 4px 10px #2C3E50;
-    border: 1px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: #ffffff;
-    flex-basis: 40%;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }   
+    .btnEst{
+        width: 150px;
+        height: 30px;
+        border: 0;
+        font-size: 1em;
+        margin: .625rem;
+        border-radius: 7px;
+        color: white;
+        text-align: center;
+    }
+    #verTabla{
+        background-color: #4365b3;
+    }
+    #cerrarS{
+        background-color: #FE4A49;
+    }
+.contOpciones{
+    height: 65%;
+    width: 80%;
+    padding: .625rem;
+    display: flex;
+    justify-content: space-around;
+}
+    .contOpciones > div{
+        display: flex;
+        flex-direction: column;
+        margin: .625rem;
+        width: 45%;
+        align-items: center;
+        justify-content: center;  
+    }
+    .opcion{
+        border-radius: 25px;
+        color: #fff;
+        background-color: #FE4A49;
+        width: 90%;
+        height: 35px;;
+        border: 0;
+        padding: 5px;
+    }
 .top{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
+    padding: 1.25rem;
+}  
 p{
     text-align: center;
     color: rgb(41, 43, 49);
     padding: 5px;
     width: 100%;
     font-size: 1.5em;
-}
-.bus{
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-grow: 1;
-    height: 80%;
 }
 input{
     width: 60%;
@@ -93,30 +128,19 @@ input{
     align-content: center;
     
 }
-.opcion{
-    border-radius: 25px;
-    color: #fff;
-    background-color: #FE4A49;
-    width: 130px;
-    height: 35px;;
-    border: 0;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-}
 .llenado{
-    background-color: #6B88CE;
+    background-color: #4365b3;
 }
 .limite {
-    margin-left: 17px;
     padding: 3px;
     background-color:#CDCDCD;
     width:100px;
     height: 20px;
     border-radius: 7px;
+    margin-bottom: .75rem;
 }
 .grafica{
-    background-color:#6B88CE;
+    background-color:#4365b3;
     width: 0%;
     height: 100%;
     border-radius: 7px;
@@ -124,14 +148,7 @@ input{
 .grafic2{
     background-color:#FE4A49;
 }
-.izq{
-    float: left;
-    align-items: center;
-}
-.der{
-    float: right;
-    align-items: center;
-}
+
 #horarios{
     position: fixed;
     top: 10%;
@@ -162,39 +179,12 @@ input{
     border-bottom-right-radius: 7px;
     color: white;
 }
-#verTabla{
-    position: fixed;
-    width: 120px;
-    height: 20px;
-    border: 0;
-    font-size: 1em;
-    background-color: #6B88CE;
-    text-align: center;
-    align-content: center;
-    border-radius: 7px;
-    color: white;
-    top: 92%;
-    left: 9%;
-}
-#cerrarS{
-    position: fixed;
-    width: 120px;
-    height: 20px;
-    border: 0;
-    font-size: 1em;
-    background-color: #FE4A49;
-    text-align: center;
-    align-content: center;
-    border-radius: 7px;
-    color: white;
-    top: 92%;
-    left: calc(9% + 125px);
-}
+
 #ahora{
     color: #FE4A49;
 }
 table, th, td {
-  border: 2px solid #6B88CE;
+  border: 2px solid #4365b3;
   background-color: #CDCDCD;
   opacity: 1;
   text-align: center;
@@ -203,3 +193,11 @@ table, th, td {
 th, td{
     padding: 5px;
 }
+
+@media screen and (max-width: 39.9375em){
+    
+}
+@media screen and (min-width: 40rem) and (max-width: 63.9375rem){
+    
+}
+ 
