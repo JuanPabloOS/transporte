@@ -48,7 +48,8 @@ function login(){
                 window.location.href = `/`;
             }
             if(respuesta.status == 0){                
-                alert("No se ha podido iniciar sesión, verifica tus datos");
+                // alert("No se ha podido iniciar sesión, verifica tus datos");
+                document.querySelector('.modal').style.display='block';
             }            
         }
     }
@@ -72,10 +73,12 @@ function registrar(){
             if (http.readyState == 4 && http.status == 200) {                                    
                 var respuesta = JSON.parse(this.responseText);            
                 if(respuesta.status == 1){
-                    alert("Ya estás registrado");                                        
+                    // alert("Ya estás registrado"); 
+                    document.querySelector('.modal').style.display='block';                                       
                 }
                 if(respuesta.status == 0){                
-                    alert("Registro fallido");
+                    // alert("Registro fallido");
+                    document.querySelector('.modal').style.display='block';
                 }            
             }
         }
@@ -86,3 +89,12 @@ function registrar(){
         }    
 }
 
+function closeModal() {
+    document.querySelector('.modal').style.display='none';
+}
+function closeModal2() {
+    document.querySelector('.modal2').style.display='none';
+}
+function closeModal3() {
+    document.querySelector('.modal3').style.display='none';
+}

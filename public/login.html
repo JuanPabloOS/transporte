@@ -34,6 +34,40 @@
                 <input class="boton iniciar" type="button" onclick="login()" value="Iniciar sesión">
             </form>
         </div>
+        <!-- MODAL 1-->
+        <div class="modal">
+            <div class="contInt">
+                <div class="errHeader">
+                    <h2>Ocurrió un error</h2>
+                </div>
+                <div class="errMsg">
+                    <p>No se ha podido iniciar sesión, verifica tus datos</p>
+                    <input type="button" value="Aceptar" id="aceptar" onclick="closeModal()">
+                </div>
+            </div>
+        </div>
+        <div class="modal2">
+            <div class="contInt">
+                <div class="errHeader">
+                    <h2>Ya estás registrado</h2>
+                </div>
+                <div class="errMsg">
+                    <p>Intenta iniciar sesión</p>
+                    <input type="button" value="Aceptar" id="aceptar" onclick="closeModal2()">
+                </div>
+            </div>
+        </div>
+        <div class="modal3">
+                <div class="contInt">
+                    <div class="errHeader">
+                        <h2>Registro fallido</h2>
+                    </div>
+                    <div class="errMsg">
+                        <p>Intenta nuevamente</p>
+                        <input type="button" value="Aceptar" id="aceptar" onclick="closeModal3()">
+                    </div>
+                </div>
+            </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/peticiones.js"></script>
     <!-- <script src="js/socket-cliente.js"></script> -->
