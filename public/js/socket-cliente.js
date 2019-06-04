@@ -13,43 +13,115 @@ var contadorBus2 = [0,0,0];
 var contadorBus1Espacio = [0,0,0];
 var contadorBus2Espacio = [0,0,0];
 //Estas variables indican para cuál autobús ha opinado la persona
-//si está en true significa que ha opinado para dicho autobús
+//si está en 1 significa que ha opinado para dicho autobús
 //Ha opinado sobre si ya salió o no el autobus
-var bus1 = false
-var bus2 = false
+var bus1 = 0
+var bus2 = 0
 // Ha opinado sobre si va lleno o no
-var bus1Espacio=false
-var bus2Espacio=false
+var bus1Espacio=0
+var bus2Espacio=0
 //guarda el número de la opción ue ha seleccionado
-var b1Estado = 0
-var b1Espacio = 0
+var b1Estado=0
+var b1Espacio=0
 var b2Estado=0
 var b2Espacio=0
-//actualizar variables
+//var para establecer horario
+var horario = 0;
+
+function establecerHorario(){
+  var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    console.log(`La hora es ${h}:${m}`);
+    if((h>=18 && m>=45)||(h==19&&m<15 ) ){//juriquilla 19:10   
+      horario=1; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=18 && m>=0){// cu 18:30
+      horario=2; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=17 && m>=0){//juriquilla 17:30
+      horario=3; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=16 && m>=30){//cu 17:00
+      horario=4; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=16 && m>=00){// juriquilla 16:30
+      horario=5; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=15 && m>=30){//cu 16:00
+      horario=6; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=15 && m>=00){//cu 15:30
+      horario=7; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=14 && m>=30){//juriquilla  15
+      horario=8; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=14 && m>=0){// cu 14:30
+      horario=9; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=13 && m>=41){//juriquilla 14:10
+      horario=10; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=13 && m>=10){//cu 13:40
+      horario=11; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=12 && m>=33){//juriquilla 13:00 
+     horario=12;
+     sessionStorage.setItem("horario",horario);
+     console.log(`Horario local ${horario}`)
+    }else if(h>=12 && m>=0){//cu 12:30
+      horario=13; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=11 && m>=30){//juriquilla 11:00
+      horario=14; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=9 && m>=50){//cu 10:20
+      horario=15; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=8 && m>=0){//cu 8:30
+      horario=16; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=7 && m>=0){//cu 7:30
+      horario=17; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }else if(h>=6 && m>=0){// cu 6:30
+      horario=18; 
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario local ${horario}`)
+    }
+}
 window.onload=function(){
-    var session = localStorage.getItem("session");
+  console.log("============================")
+    var session = sessionStorage.getItem("session");
     if(session){
-        username = localStorage.getItem("username");
-        document.getElementById("user").innerHTML=username;
-        datosUsuario()
+      // console.log(`var session ${session}`);
+        establecerHorario();
+        console.log(`onload se estableció el horario ${horario}`)
+        username = sessionStorage.getItem("username");
+        document.getElementById("user").innerHTML=username;        
         obtenerYActualizar()                
     }else{        
         window.location.href = `/login`;        
     }    
 }
 
-function datosUsuario(){
-    var http = new XMLHttpRequest();
-    http.onreadystatechange=function(){
-        if(http.readyState==4 && http.status == 200){
-            var respuesta = JSON.parse(this.responseText);
-            console.log(respuesta);
-        }
-    }
-    http.open("POST","/transporte/datosUsuario",true);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send("username="+username);      
-}
 
 function obtenerYActualizar(){
     var http = new XMLHttpRequest();
@@ -71,10 +143,30 @@ function obtenerYActualizar(){
             contadorBus2Espacio=[respuesta['autobuses'][1]['opcion4'],respuesta['autobuses'][1]['opcion5'],respuesta['autobuses'][1]['opcion6']];
             llenarGraficas(1)
             llenarGraficas(2)
-            bus1 = localStorage.getItem("bus1")
-            bus2 = localStorage.getItem("bus2")
-            bus1Espacio=localStorage.getItem("bus1Espacio")
-            bus2Espacio=localStorage.getItem("bus2Espacio")            
+            if(localStorage.getItem("bus1")){
+              bus1 = localStorage.getItem("bus1")
+            }
+            if(localStorage.getItem("bus2")){
+              bus2 = localStorage.getItem("bus2")
+            }
+            if(localStorage.getItem("bus1Espacio")){
+              bus1Espacio=localStorage.getItem("bus1Espacio")
+            }
+            if(localStorage.getItem("bus2Espacio")    ){
+              bus2Espacio=localStorage.getItem("bus2Espacio")    
+            }
+            if(localStorage.getItem("b1Estado")){
+              b1Estado = localStorage.getItem("b1Estado")
+            }
+            if(localStorage.getItem("b1Espacio")){
+              b1Espacio = localStorage.getItem("b1Espacio")
+            }
+            if(localStorage.getItem("b2Estado")){
+              b2Estado=localStorage.getItem("b2Estado")
+            }
+            if(localStorage.getItem("b2Espacio")){
+              b2Espacio=localStorage.getItem("b2Espacio")
+            }            
         }
     }
     http.open("POST","/transporte/obtenerDatos",true);
@@ -82,17 +174,11 @@ function obtenerYActualizar(){
     http.send();
 }
 
-///esta funcion se recibe apenas se ingresa al servidor
-socket.on('enviarDatos',(data)=>{
-    console.log(JSON.parse(data.bus1[0]));
-    console.log(JSON.parse(data.bus2[0]));
-})
-var horario = 0;
-socket.on('reset',(data)=>{
-    console.log(data.num);
-    console.log(horario)
-    if(data.num!=horario){
-      document.getElementById("destino").innerHTML=data.horario;
+
+socket.on('reset',(data)=>{    
+    document.getElementById("destino").innerHTML=data.horario;
+    if(data.num!=sessionStorage.getItem("horario")){            
+      console.log(`cambio de horario ${data.horario}`);
         reset();
     }    
 })
@@ -102,56 +188,83 @@ socket.on('reset',(data)=>{
 //la variable opción indica el estatus del camión
 function actualizar(bus,opcion){             
     if(bus==1 && opcion<4){
-        socket.emit('enviar',{
-            bus: bus,
-            opcion:opcion,
-            status:bus1,
-            opcionAnterior:b1Estado
-        })
-        bus1=true
-        b1Estado=opcion
-        window.localStorage.setItem("bus1",true)
+      if(bus1==0){
+        socket.emit('inc',{
+          bus: bus,
+          opcion:opcion,         
+      });      
+      }else{
+        socket.emit('dec',{
+          bus: bus,
+          opcion:opcion,          
+          opcionAnterior:b1Estado
+      });
+      }
+        bus1=1;
+        window.localStorage.setItem("bus1",1);
+        b1Estado=opcion;
+        window.localStorage.setItem("b1Estado",opcion);        
     } 
     if(bus==1 && opcion>3){
-        socket.emit('enviar',{
-            bus: bus,
-            opcion:opcion,
-            status:bus1Espacio,
-            opcionAnterior:b1Espacio
-        })
-        bus1Espacio=true
-        window.localStorage.setItem("bus1Espacio",true)
-        b1Espacio=opcion
+      if(b1Espacio==0){
+        socket.emit('inc',{
+          bus: bus,
+          opcion:opcion,
+      })
+      }else{
+        socket.emit('dec',{
+          bus: bus,
+          opcion:opcion,          
+          opcionAnterior:b1Espacio
+      })
+      }       
+        bus1Espacio=1;
+        window.localStorage.setItem("bus1Espacio",1);
+        b1Espacio=opcion;
+        window.localStorage.setItem("b1Espacio",opcion);
     } 
     if(bus==2 && opcion<4){
-        socket.emit('enviar',{
-            bus: bus,
-            opcion:opcion,
-            status:bus2,
-            opcionAnterior:b2Estado
-        })
-        bus2=true
-        window.localStorage.setItem("bus2",true)
-        b2Estado=opcion
+      if(bus2 == 0){
+        socket.emit('inc',{
+          bus: bus,
+          opcion:opcion,
+      })
+      }else{
+        socket.emit('dec',{
+          bus: bus,
+          opcion:opcion,
+          status:bus2,
+          opcionAnterior:b2Estado
+      })
+      }        
+        bus2=1;
+        window.localStorage.setItem("bus2",1);
+        b2Estado=opcion;
+        window.localStorage.setItem("b2Estado",opcion);
     }   
     if(bus==2 && opcion>3){
-        socket.emit('enviar',{
-            bus: bus,
-            opcion:opcion,
-            status:bus2Espacio,
-            opcionAnterior:b2Espacio
-        })
-        bus2Espacio=true
-        window.localStorage.setItem("bus2Espacio",true)
-        b2Espacio=opcion        
+      if(bus2Espacio==0){
+        socket.emit('inc',{
+          bus: bus,
+          opcion:opcion,          
+          opcionAnterior:b2Espacio
+      })
+      }else{
+        socket.emit('dec',{
+          bus: bus,
+          opcion:opcion,          
+          opcionAnterior:b2Espacio
+      })
+      }        
+        bus2Espacio=1;
+        window.localStorage.setItem("bus2Espacio",1);
+        b2Espacio=opcion;
+        window.localStorage.setItem("b2Espacio",opcion);
     }         
 }
 
-// var personasB1 = 0;
-// var personasB2 = 0;
-// var personasB1Espacio = 0;
-// var personasB2Espacio = 0;
-socket.on('enviar',(data)=>{
+
+socket.on('enviar',()=>{
    obtenerYActualizar()
 })
 
@@ -188,21 +301,27 @@ function llenarGraficas(bus){
 }
 function reset(){    
     //Estas iables indican para cuál autobús ha opinado la persona
-    //si está en true significa que ha opinado para dicho autobús
+    //si está en 1 significa que ha opinado para dicho autobús
     //Ha opinado sobre si ya salió o no el autobus
-    bus1 = false
-    bus2 = false
+    console.log("Se ejecuta reset");
+    bus1 = 0
+    bus2 = 0
     // Ha opinado sobre si va lleno o no
-    bus1Espacio=false
-    bus2Espacio=false   
-    window.localStorage.setItem("bus1",false)
-    window.localStorage.setItem("bus1Espacio",false)
-    window.localStorage.setItem("bus2",false)
-    window.localStorage.setItem("bus2Espacio",false)
+    bus1Espacio=0
+    bus2Espacio=0   
+    window.localStorage.setItem("bus1",0);
+    window.localStorage.setItem("bus1Espacio",0);
+    window.localStorage.setItem("bus2",0);
+    window.localStorage.setItem("bus2Espacio",0);
+    localStorage.setItem("b1Estado",0);
+    localStorage.setItem("b1Espacio",0);
+    localStorage.setItem("b2Estado",0);
+    localStorage.setItem("b2Espacio",0);
     obtenerYActualizar();
     console.log("listo")
 }
 function cerrarSesion(){
-    localStorage.removeItem("session");
+    sessionStorage.removeItem("session");
+    sessionStorage.removeItem("username");
     window.location.href = `/login`;
 }

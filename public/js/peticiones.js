@@ -1,3 +1,9 @@
+window.onload=function(){
+    var session = sessionStorage.getItem("session");
+    if(session){
+        window.location.href = `/`;
+    }
+}
 document.getElementById("email").addEventListener("keypress", function(event){
     console.log("entró")
     // if (event.keyCode === 13) {
@@ -11,9 +17,7 @@ document.getElementById("email").addEventListener("keypress", function(event){
     }       
     // }    
 });
-// Enviar datos del usuario para el inicio de sesión
-//verificar credenciales
-//dar retroalimentación
+
 function login(){
     var email = document.getElementById("email2").value;
     var pass = document.getElementById("pass2").value;
@@ -22,11 +26,23 @@ function login(){
 		if (http.readyState == 4 && http.status == 200) {                                    
             var respuesta = JSON.parse(this.responseText);   
             console.log(respuesta)         
-            if(respuesta.status == 1){
-                //alert(`¿UAQ's UP ${respuesta.nombre}?`);                  
-                window.localStorage.setItem("username",respuesta.result["username"]);
+            if(respuesta.status == 1){                
+                //alert(`¿UAQ's UP ${respuesta.nombre}?`);
+                var id = localStorage.getItem("id");
+                if(id){
+                    localStorage.removeItem("bus1")
+                    localStorage.removeItem("bus2")
+                    localStorage.removeItem("bus1Espacio")
+                    localStorage.removeItem("bus2Espacio")    
+                    localStorage.removeItem("b1Estado")
+                    localStorage.removeItem("b1Espacio")
+                    localStorage.removeItem("b2Estado")
+                    localStorage.removeItem("b2Espacio")
+                }                  
+                localStorage.setItem("id",respuesta.result["_id"]);
+                sessionStorage.setItem("username",respuesta.result["username"]);
                 console.log(localStorage.getItem("id")); 
-                localStorage.setItem("session","1");                    
+                sessionStorage.setItem("session","1");                    
                 
                 //establecer valores          
                 window.location.href = `/`;
