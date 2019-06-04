@@ -35,18 +35,18 @@
             </form>
         </div>
         <!-- MODAL 1-->
-        <div class="modal">
+        <div id="modal1" class="modalNone">
             <div class="contInt">
                 <div class="errHeader">
-                    <h2>Ocurrió un error</h2>
+                    <h2 id="warning">Petición no completada</h2>
                 </div>
                 <div class="errMsg">
-                    <p>No se ha podido iniciar sesión, verifica tus datos</p>
+                    <p id="advice">Revisa tus datos</p>
                     <input type="button" value="Aceptar" id="aceptar" onclick="closeModal()">
                 </div>
             </div>
         </div>
-        <div class="modal2">
+        <div class="modalNone">
             <div class="contInt">
                 <div class="errHeader">
                     <h2>Ya estás registrado</h2>
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal3">
+        <div class="modalNone">
                 <div class="contInt">
                     <div class="errHeader">
                         <h2>Registro fallido</h2>

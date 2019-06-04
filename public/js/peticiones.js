@@ -4,6 +4,12 @@ window.onload=function(){
         window.location.href = `/`;
     }
 }
+function modal(warning,advice){
+    document.getElementById("warning").innerHTML = warning;
+    document.getElementById("advice").innerHTML = advice;
+    document.querySelector('#modal1').style.display='block';
+    document.getElementById("modal1").className = "modal"
+}
 document.getElementById("email").addEventListener("keypress", function(event){
     console.log("entró")
     // if (event.keyCode === 13) {
@@ -49,7 +55,8 @@ function login(){
             }
             if(respuesta.status == 0){                
                 // alert("No se ha podido iniciar sesión, verifica tus datos");
-                document.querySelector('.modal').style.display='block';
+                // document.querySelector('.modal').style.display='block';
+                modal("No se pudo iniciar sesión","Revisa tus datos");
             }            
         }
     }
@@ -74,11 +81,13 @@ function registrar(){
                 var respuesta = JSON.parse(this.responseText);            
                 if(respuesta.status == 1){
                     // alert("Ya estás registrado"); 
-                    document.querySelector('.modal').style.display='block';                                       
+                    //document.querySelector('.modal2').style.display='block';                                       
+                    modal("Registro completado","Intenta iniciar sesión");
                 }
                 if(respuesta.status == 0){                
                     // alert("Registro fallido");
-                    document.querySelector('.modal').style.display='block';
+                    //document.querySelector('.modal3').style.display='block';
+                     modal("Registro no completado","Revisa tus datos");
                 }            
             }
         }
@@ -90,7 +99,11 @@ function registrar(){
 }
 
 function closeModal() {
-    document.querySelector('.modal').style.display='none';
+    // document.querySelector('.modal').style.display='none';
+    document.getElementById("modal1").className = "modalOut";
+    setTimeout(function(){   
+        document.getElementById("modal1").style.display="none";
+    },1500)
 }
 function closeModal2() {
     document.querySelector('.modal2').style.display='none';

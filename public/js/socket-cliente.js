@@ -81,15 +81,15 @@ function establecerHorario(){
      horario=12;
      sessionStorage.setItem("horario",horario);
      console.log(`Horario local ${horario}`)
-    }else if(h>=12 && m>=0){//cu 12:30
+    }else if(h>=11 && m>=0){//cu 12:30
       horario=13; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=11 && m>=30){//juriquilla 11:00
+    }else if(h>=10 && m>=30){//juriquilla 11:00
       horario=14; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=9 && m>=50){//cu 10:20
+    }else if((h>=9 && m>=50)||(h==10 && m<=20)){//cu 10:20
       horario=15; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
@@ -121,7 +121,29 @@ window.onload=function(){
         window.location.href = `/login`;        
     }    
 }
+function notificar(texto){
+  // Let's check if the browser supports notifications
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
 
+// Let's check whether notification permissions have already been granted
+else if (Notification.permission === "granted") {
+  // If it's okay let's create a notification
+  var notification = new Notification(texto);
+}
+
+// Otherwise, we need to ask the user for permission
+else if (Notification.permission !== 'denied') {
+  Notification.requestPermission(function (permission) {
+    // If the user accepts, let's create a notification
+    if (permission === "granted") {
+      var notification = new Notification(texto);
+    }
+  });
+}
+
+}
 
 function obtenerYActualizar(){
     var http = new XMLHttpRequest();
@@ -174,18 +196,16 @@ function obtenerYActualizar(){
     http.send();
 }
 
-
 socket.on('reset',(data)=>{    
     document.getElementById("destino").innerHTML=data.horario;
-    if(data.num!=sessionStorage.getItem("horario")){            
+    if(data.num!=sessionStorage.getItem("horario")){    
+      establecerHorario();
       console.log(`cambio de horario ${data.horario}`);
-        reset();
+      reset();
+      notificar("Cambio de horario: " + data.horario);
     }    
 })
 
-//esta función se manda llamar cuando se selecciona una opción
-//la varibale bus indica si es el autobús 1 o 2
-//la variable opción indica el estatus del camión
 function actualizar(bus,opcion){             
     if(bus==1 && opcion<4){
       if(bus1==0){
@@ -260,16 +280,14 @@ function actualizar(bus,opcion){
         window.localStorage.setItem("bus2Espacio",1);
         b2Espacio=opcion;
         window.localStorage.setItem("b2Espacio",opcion);
-    }         
+    }    
+    obtenerYActualizar();     
 }
-
 
 socket.on('enviar',()=>{
    obtenerYActualizar()
 })
 
-//actualiza la gráficas
-//recibe el número del autobús
 function llenarGraficas(bus){
     if(bus==1){
         if(contadorBus1[0]>personasB1){contadorBus1[0]=personasB1-1;}

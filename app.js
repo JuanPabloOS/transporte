@@ -108,9 +108,7 @@ function reset(num){
 //usar socket.io
 const socketIO = require('socket.io');
 let io = socketIO(server);
-io.on('connection', function(client){            
-    //manejador de eventos
-    
+io.on('connection', function(client){                    
     function intervalFunc() {
       var d = new Date();
       var h = d.getHours();
@@ -176,17 +174,17 @@ io.on('connection', function(client){
        reset(12);
        io.emit('reset',{horario:'Juriquilla - CU salida: 13:00',num:12});
       //  console.log(`Horario servidor 12`)
-      }else if(h>=12 && m>=0){
+      }else if(h>=11 && m>=0){
         //cu 12:30
         reset(13);
         io.emit('reset',{horario:'CU - Juriquilla salida: 12:30',num:13});
         // console.log(`Horario servidor 13`)
-      }else if(h>=11 && m>=30){
+      }else if(h>=10 && m>=30){
         //juriquilla 11:00
         reset(14);
         io.emit('reset',{horario:'Juriquilla - CU salida: 11:00',num:14});
         // console.log(`Horario servidor 14`)
-      }else if(h>=9 && m>=50){
+      }else if((h>=9 && m>=50)||(h==10 && m<=20)){
         //cu 10:20
         reset(15);
         io.emit('reset',{horario:'CU - Juriquilla salida: 10:20',num:15});
@@ -259,42 +257,42 @@ io.on('connection', function(client){
     
     })    
     client.on('dec',(data)=>{
-      console.log(data);
+      //console.log(data);/
       switch(parseInt(data.opcionAnterior)){        
         case 1:
             Bus.findOneAndUpdate({idBus:data.bus},{$inc:{opcion1:-1}},(error,result)=>{
               if(error){throw error}
-              console.log(result)
+              // console.log(result)
             })
             break;
         case 2:
           Bus.findOneAndUpdate({idBus:data.bus},{$inc:{opcion2:-1}},(error,result)=>{
             if(error){throw error}
-            console.log(result)
+            // console.log(result)
           })
           break;
         case 3:
           Bus.findOneAndUpdate({idBus:data.bus},{$inc:{opcion3:-1}},(error,result)=>{
             if(error){throw error}
-            console.log(result)
+            // console.log(result)
           })
           break;
         case 4:
           Bus.findOneAndUpdate({idBus:data.bus},{$inc:{opcion4:-1}},(error,result)=>{
             if(error){throw error}
-            console.log(result)
+            // console.log(result)
           })
           break;
         case 5:
           Bus.findOneAndUpdate({idBus:data.bus},{$inc:{opcion5:-1}},(error,result)=>{
             if(error){throw error}
-            console.log(result)
+            // console.log(result)
           })
           break;
         case 6:
           Bus.findOneAndUpdate({idBus:data.bus},{$inc:{opcion6:-1}},(error,result)=>{
             if(error){throw error}
-            console.log(result)
+            // console.log(result)
           })
           break;
         default:
