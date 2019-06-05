@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">
     <title>Login</title>
@@ -17,9 +18,9 @@
                         <h1 class="nombre">¿Eres nuevo?</h1>
                         <p>¡Regístrate!</p>
                     </div>
-                <input class="inDeco" type="text" name="user" id="email" placeholder="Usuario">
-                <input class="inDeco" type="password" name="pass" id="pass" placeholder="Contraseña">
-                <input class="inDeco" type="password" name="pass" id="verificarPass" placeholder="Confirma contraseña">
+                <input class="inDeco" type="text" name="user" id="email" placeholder="Usuario" minlength="5">
+                <input class="inDeco" type="password" name="pass" id="pass" placeholder="Contraseña" minlength="5">
+                <input class="inDeco" type="password" name="pass" id="verificarPass" placeholder="Confirma contraseña" minlength="5">
                 <input class="boton registrar" type="button" onclick="registrar()" value="Registrarme">
             </form>
         </div>
