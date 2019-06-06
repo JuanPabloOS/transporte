@@ -104,10 +104,25 @@ function datosUsuario(req,res){
         }
     })
 }
+
+function usuarioDisponible(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    const username = req.body.username;
+    User.findOne({username:username},(error,result)=>{
+        if(error){
+            return null;
+        }else{
+            return res.json({username:result})
+        }
+        
+    })
+}
 module.exports={
     signUp,
     logIn,
     registrarBus,
     obtenerDatos,
-    datosUsuario
+    datosUsuario,
+    usuarioDisponible
 }

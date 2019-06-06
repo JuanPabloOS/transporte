@@ -102,8 +102,6 @@ function reset(num){
   }  
 }
 
-
-
 //crear el socket =============================================================
 //usar socket.io
 const socketIO = require('socket.io');

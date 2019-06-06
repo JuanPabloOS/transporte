@@ -36,6 +36,7 @@
             </form>
         </div>
         <!-- MODAL 1-->
+        <!-- modal con botón -->
         <div id="modal1" class="modalNone">
             <div class="contInt">
                 <div class="errHeader">
@@ -47,15 +48,16 @@
                 </div>
             </div>
         </div>
-        <div class="modalNone">
+        <!-- modal sin botón -->
+        <div id="modal2" class="modalNone">
             <div class="contInt">
                 <div class="errHeader">
-                    <h2>Ya estás registrado</h2>
+                    <h2 id="warning2">warning</h2>
                 </div>
                 <div class="errMsg">
-                    <p>Intenta iniciar sesión</p>
-                    <input type="button" value="Aceptar" id="aceptar" onclick="closeModal2()">
-                </div>
+                    <p id="advice2">advice</p>
+                    <input type="button" value="Aceptar" id="aceptar" onclick="closeModal2()">                   
+                </div>                                
             </div>
         </div>
         <div class="modalNone">

@@ -10,6 +10,13 @@ function modal(warning,advice){
     document.querySelector('#modal1').style.display='block';
     document.getElementById("modal1").className = "modal"
 }
+function advertencia(warning,advice){
+    document.getElementById("warning2").innerHTML = warning;
+    document.getElementById("advice2").innerHTML = advice;
+    document.querySelector('#modal2').style.display='block';
+    document.getElementById("modal2").className = "modal"
+}
+//Quitar espacios
 document.getElementById("email").addEventListener("keypress", function(event){
     console.log("entró")
     // if (event.keyCode === 13) {
@@ -56,7 +63,10 @@ function login(){
             if(respuesta.status == 0){                
                 // alert("No se ha podido iniciar sesión, verifica tus datos");
                 // document.querySelector('.modal').style.display='block';
-                modal("No se pudo iniciar sesión","Revisa tus datos");
+                modal("No se pudo iniciar sesión","Revisa tus datos");                
+                    // setTimeout(() => {
+                    //     closeModal()
+                    // }, 1800);
             }            
         }
     }
@@ -72,30 +82,59 @@ function registrar(){
     var email=  document.getElementById("email").value;
     var pass=  document.getElementById("pass").value;  
     var verificarPass = document.getElementById("verificarPass").value;
-    if(pass != verificarPass){
-        document.getElementById("verificarPass").style.border = "1px solid red";
-    }else{
-        var	http = new XMLHttpRequest();    
-        http.onreadystatechange = function (){        
-            if (http.readyState == 4 && http.status == 200) {                                    
-                var respuesta = JSON.parse(this.responseText);            
-                if(respuesta.status == 1){
-                    // alert("Ya estás registrado"); 
-                    //document.querySelector('.modal2').style.display='block';                                       
-                    modal("Registro completado","Intenta iniciar sesión");
-                }
-                if(respuesta.status == 0){                
-                    // alert("Registro fallido");
-                    //document.querySelector('.modal3').style.display='block';
-                     modal("Registro no completado","Revisa tus datos");
-                }            
-            }
+    var msj = "";
+    if(email.length < 5){
+         msj = "Tu usuario debe tener por lo menos 5 caracteres";
+    }
+    if(pass.length<5 || verificarPass.length<5){
+        if(msj!=""){
+            msj="Tu usuario y contraseña deben tener por lo menos 5 caracteres";
+        }else{
+            msj ="Tu contraseña debe tener por lo menos 5 caracteres";
         }
-        //http.open("POST","http://localhost:3000/registrar",true);
-        http.open("POST","/transporte/signup",true);
-        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        http.send("&username="+email+"&password="+pass);
-        }    
+    }
+    if(msj==""){             
+        if(pass != verificarPass){
+            document.getElementById("verificarPass").style.border = "1px solid red";
+            advertencia("Error de  Contraseña","Haz que coincidan las contraseñas");
+                        setTimeout(() => {
+                            closeModal2()
+                        }, 2300);
+        }else{
+            var	http = new XMLHttpRequest();    
+            http.onreadystatechange = function (){        
+                if (http.readyState == 4 && http.status == 200) {                                    
+                    var respuesta = JSON.parse(this.responseText);            
+                    if(respuesta.status == 1){
+                        // alert("Ya estás registrado"); 
+                        //document.querySelector('.modal2').style.display='block';                                       
+                        advertencia("Registro completado","Intenta iniciar sesión");
+                        setTimeout(() => {
+                            closeModal2()
+                        }, 2500);
+                    }
+                    if(respuesta.status == 0){                
+                        // alert("Registro fallido");
+                        //document.querySelector('.modal3').style.display='block';
+                            advertencia("Registro no completado","Revisa tus datos");
+                            setTimeout(() => {
+                            closeModal2()
+                        }, 2500);
+                    }            
+                }
+            }
+            //http.open("POST","http://localhost:3000/registrar",true);
+            http.open("POST","/transporte/signup",true);
+            http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            http.send("&username="+email+"&password="+pass);
+            }                
+    }else{
+        advertencia("Error de datos",msj);
+            setTimeout(() => {
+                closeModal2()
+            }, 3000);
+    }
+        
 }
 
 function closeModal() {
@@ -106,7 +145,10 @@ function closeModal() {
     },1500)
 }
 function closeModal2() {
-    document.querySelector('.modal2').style.display='none';
+    document.getElementById("modal2").className = "modalOut";
+    setTimeout(function(){   
+        document.getElementById("modal2").style.display="none";
+    },1500)
 }
 function closeModal3() {
     document.querySelector('.modal3').style.display='none';
