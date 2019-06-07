@@ -106,7 +106,8 @@ function reset(num){
 //usar socket.io
 const socketIO = require('socket.io');
 let io = socketIO(server);
-io.on('connection', function(client){                    
+io.on('connection', function(client){  
+  
     function intervalFunc() {
       var d = new Date();
       var h = d.getHours();
@@ -334,8 +335,6 @@ io.on('connection', function(client){
     })
 });
 
-
-
-  server.listen(port, ()=>{
+server.listen(port, ()=>{
     console.log(`Listening on port ${port}`);
 })
