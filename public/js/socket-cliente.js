@@ -113,10 +113,10 @@ window.onload=function(){
     if(session){
       // console.log(`var session ${session}`);
         establecerHorario();
-        console.log(`onload se estableció el horario ${horario}`)
+        console.log(`onload se estableció el horario ${horario}`);
         username = sessionStorage.getItem("username");
-        document.getElementById("user").innerHTML=username;        
-        obtenerYActualizar()                
+        document.getElementById("user").innerHTML=username;
+        obtenerYActualizar();
     }else{        
         window.location.href = `/login`;        
     }    
@@ -124,7 +124,7 @@ window.onload=function(){
 function notificar(texto){
   // Let's check if the browser supports notifications
   if (!("Notification" in window)) {
-    alert("This browser does not support desktop notification");
+    alert("Este navegador no soporta notificaciones de escritrio");
   }
 
 // Let's check whether notification permissions have already been granted
@@ -318,7 +318,7 @@ function llenarGraficas(bus){
     }
 }
 function reset(){    
-    //Estas iables indican para cuál autobús ha opinado la persona
+    //Estas lables indican para cuál autobús ha opinado la persona
     //si está en 1 significa que ha opinado para dicho autobús
     //Ha opinado sobre si ya salió o no el autobus
     console.log("Se ejecuta reset");

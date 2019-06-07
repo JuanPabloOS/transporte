@@ -4,8 +4,9 @@ function signUp(req, res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     let newUser = new User();
-    newUser.username = req.body.username;
-    newUser.password = req.body.password;
+    datos = JSON.parse(req.body.datos)
+    newUser.username = datos['username'];
+    newUser.password = datos['password'];
     
     newUser.save((error)=>{
         if(error){
@@ -27,7 +28,10 @@ function signUp(req, res){
 function logIn(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    User.findOne({"username":req.body.username,"password":req.body.password},(error,result)=>{
+    console.log("==========")
+    const datos = JSON.parse(req.body.datos);
+    console.log(datos['username'])
+    User.findOne({"username":datos['username'],"password":datos['password']},(error,result)=>{
         if(error){
             return res.json({
                 status : 0,

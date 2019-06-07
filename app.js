@@ -76,7 +76,7 @@ function establecerHorario(){
     }else if(h>=11 && m>=30){//juriquilla 11:00
       horario=14; 
       console.log(`Horario local ${horario}`)
-    }else if(h>=9 && m>=50){//cu 10:20
+    }else if((h>=9 && m>=50)||(h==10 && m<=20)){//cu 10:20
       horario=15; 
       console.log(`Horario local ${horario}`)
     }else if(h>=8 && m>=0){//cu 8:30

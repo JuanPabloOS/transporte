@@ -71,9 +71,15 @@ function login(){
         }
     }
     //http.open("POST","http://localhost:3000/inicioSesion",true);
+    var datos = {
+        username:email,
+        password:pass
+    }
+    datos = JSON.stringify(datos);
     http.open("POST","/transporte/login",true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send("username="+email+"&password="+pass);    
+    // http.send("username="+email+"&password="+pass);   
+    http.send('datos='+datos); 
 }
 //Enviar datos del usuario para su registro
 //verificar si el correo está disponible
@@ -126,7 +132,12 @@ function registrar(){
             //http.open("POST","http://localhost:3000/registrar",true);
             http.open("POST","/transporte/signup",true);
             http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            http.send("&username="+email+"&password="+pass);
+            datos = {
+                username:email,
+                password:pass
+            }
+            datos = JSON.stringify(datos);
+            http.send("datos="+datos);
             }                
     }else{
         advertencia("Error de datos",msj);
