@@ -190,17 +190,21 @@ body{
         .errMsg{
             flex-grow: 1;
             font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
             .errMsg > p{
-                padding-top: 2.5rem;
+                padding-top: 1rem;
                 text-align: center;    
                 font-size: 1.15rem;
                 width: calc(100% - .625rem);
             }
             #aceptar{
-                position: absolute;
-                bottom: 1.25rem;
-                right: 2.5rem;
+                /* position: absolute; */
+                /* bottom: 1.25rem; */
+                /* right: 2.5rem; */
                 width: 6.25rem;
                 height: auto;
                 border: none;
@@ -210,7 +214,7 @@ body{
                 color: #fff;
                 border-radius: 25px;
                 outline: none;
-                margin: 0;
+                margin: 1rem auto 1rem auto;
                 font-size: 1rem;
             }
             
