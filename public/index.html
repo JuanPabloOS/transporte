@@ -91,21 +91,89 @@
     </div>
     <div id="horarios">
         <p class="texto" id="ahora"></p>
-        <button id="xTabla" onclick="hr()">X</button>
-        <table id="tabla">
-            <tr><th>Salida de CU</th><th># de camiones(puede variar)</th><th>Salida de Juriquilla</th><th># de camiones(puede variar)</th></tr>
-            <tr><td>06:30</td><td>2</td><td>-</td><td>-</td></tr>
-            <tr><td>07:30</td><td>2</td><td>-</td><td>-</td></tr>
-            <tr><td>08:30</td><td>2</td><td>-</td><td>-</td></tr>
-            <tr><td>10:20</td><td>1</td><td>11:00</td><td>1</td></tr>
-            <tr><td>12:30</td><td>1</td><td>13:00</td><td>1</td></tr>
-            <tr><td>13:40</td><td>1</td><td>14:10</td><td>1</td></tr>
-            <tr><td>14:30</td><td>2</td><td>15:00</td><td>2</td></tr>
-            <tr><td>15:30</td><td>1</td><td>16:00</td><td>1</td></tr>
-            <tr><td>16:00</td><td>1</td><td>16:30</td><td>1</td></tr>
-            <tr><td>17:00</td><td>1</td><td>17:30</td><td>1</td></tr>
-            <tr><td>18:30</td><td>1</td><td>19:10</td><td>1</td></tr>
-        </table>
+        <button id="xTabla" onclick="hr()"><b>x</b></button>
+        
+        <div class="table100 ver3 m-b-110">
+		<table data-vertable="ver3">
+			<thead>
+				<tr class="rowHead">
+					<th class="column100 column1" data-column="column1">Salida de CU</th>
+					<th class="column100 column2" data-column="column2">Num de camiones (puede variar)</th>
+					<th class="column100 column3" data-column="column3">Salida de Juriquilla</th>
+					<th class="column100 column4" data-column="column4">Num de camiones (puede variar)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">06:30</td>
+					<td class="column100 column2" data-column="column2">2</td>
+					<td class="column100 column3" data-column="column3">--</td>
+					<td class="column100 column4" data-column="column4">--</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">07:30</td>
+					<td class="column100 column2" data-column="column2">2</td>
+					<td class="column100 column3" data-column="column3">--</td>
+					<td class="column100 column4" data-column="column4">--</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">08:20</td>
+					<td class="column100 column2" data-column="column2">2</td>
+					<td class="column100 column3" data-column="column3">--</td>
+					<td class="column100 column4" data-column="column4">--</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">10:20</td>
+					<td class="column100 column2" data-column="column2">1</td>
+					<td class="column100 column3" data-column="column3">11:00</td>
+					<td class="column100 column4" data-column="column4">1</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">12:30</td>
+					<td class="column100 column2" data-column="column2">1</td>
+					<td class="column100 column3" data-column="column3">13:00</td>
+					<td class="column100 column4" data-column="column4">1</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">13:40</td>
+					<td class="column100 column2" data-column="column2">1</td>
+					<td class="column100 column3" data-column="column3">14:10</td>
+					<td class="column100 column4" data-column="column4">1</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">14:30</td>
+					<td class="column100 column2" data-column="column2">2</td>
+					<td class="column100 column3" data-column="column3">15:00</td>
+					<td class="column100 column4" data-column="column4">2</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">15:30</td>
+					<td class="column100 column2" data-column="column2">1</td>
+					<td class="column100 column3" data-column="column3">16:00</td>
+					<td class="column100 column4" data-column="column4">1</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">16:00</td>
+					<td class="column100 column2" data-column="column2">1</td>
+					<td class="column100 column3" data-column="column3">16:30</td>
+					<td class="column100 column4" data-column="column4">1</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">17:00</td>
+					<td class="column100 column2" data-column="column2">1</td>
+					<td class="column100 column3" data-column="column3">17:30</td>
+					<td class="column100 column4" data-column="column4">1</td>
+				</tr>
+				<tr class="row100">
+					<td class="column100 column1" data-column="column1">18:30</td>
+					<td class="column100 column2" data-column="column2">1</td>
+					<td class="column100 column3" data-column="column3">19:10</td>
+					<td class="column100 column4" data-column="column4">1</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+        
     </div>
     <script type="text/javascript">
         var visible = false;
@@ -129,7 +197,11 @@
         }
         function actualiza(){
             var d = new Date();
-            var h = "Hora Actual: "+d.getHours() +":"+ d.getMinutes();
+            var m = d.getMinutes();
+            if(m.length==1){
+                m = "0"+m;
+               }
+            var h = d.getHours() +":"+ m;
             document.getElementById("ahora").innerHTML = h;
         }
         function verDesp() {
