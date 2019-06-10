@@ -192,13 +192,14 @@ button{
         justify-content: center;  
     }
     .opcion{
-        border-radius: 25px;
+        border-radius: 6px;
         color: #fff;
         background-color: #FE4A49;
         width: 90%;
         height: 35px;;
         border: 0;
         padding: 5px;
+        box-shadow:2px 2px 2px 0px rgba(0,0,0,0.75);
     }
 .top{
     display: flex;

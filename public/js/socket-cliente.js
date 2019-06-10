@@ -33,75 +33,75 @@ function establecerHorario(){
     var h = d.getHours();
     var m = d.getMinutes();
     console.log(`La hora es ${h}:${m}`);
-    if((h>=18 && m>=45)||(h==19&&m<15 ) ){//juriquilla 19:10   
+    if((h==18 && m>=45)||(h==19&&m<15)){//juriquilla 19:10   
       horario=1; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=18 && m>=0){// cu 18:30
+    }else if(h==18 && m>=0){// cu 18:30
       horario=2; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=17 && m>=0){//juriquilla 17:30
+    }else if(h==17 && m>=0){//juriquilla 17:30
       horario=3; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=16 && m>=30){//cu 17:00
+    }else if(h==16 && m>=30){//cu 17:00
       horario=4; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=16 && m>=00){// juriquilla 16:30
+    }else if(h==16 && m>=00){// juriquilla 16:30
       horario=5; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=15 && m>=30){//cu 16:00
+    }else if(h==15 && m>=30){//cu 16:00
       horario=6; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=15 && m>=00){//cu 15:30
+    }else if(h==15 && m>=00){//cu 15:30
       horario=7; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=14 && m>=30){//juriquilla  15
+    }else if(h==14 && m>=30){//juriquilla  15
       horario=8; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=14 && m>=0){// cu 14:30
+    }else if(h==14 && m>=0){// cu 14:30
       horario=9; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=13 && m>=41){//juriquilla 14:10
+    }else if(h==13 && m>=41){//juriquilla 14:10
       horario=10; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=13 && m>=10){//cu 13:40
+    }else if(h==13 && m>=10){//cu 13:40
       horario=11; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=12 && m>=33){//juriquilla 13:00 
+    }else if(h==12 && m>=33){//juriquilla 13:00 
      horario=12;
      sessionStorage.setItem("horario",horario);
      console.log(`Horario local ${horario}`)
-    }else if(h>=11 && m>=0){//cu 12:30
+    }else if(h==12 && m>=0){//cu 12:30
       horario=13; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=10 && m>=30){//juriquilla 11:00
+    }else if(h==10 && m>=30){//juriquilla 11:00
       horario=14; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if((h>=9 && m>=50)||(h==10 && m<=20)){//cu 10:20
+    }else if((h==9 && m>=50)||(h==10 && m<=20)){//cu 10:20
       horario=15; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=8 && m>=0){//cu 8:30
+    }else if((h==8 && m>=0 && m<=30)){//cu 8:30
       horario=16; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=7 && m>=0){//cu 7:30
+    }else if(h==7 && m>=0){//cu 7:30
       horario=17; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
-    }else if(h>=6 && m>=0){// cu 6:30
+    }else if(h==6 && m>=0){// cu 6:30
       horario=18; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
