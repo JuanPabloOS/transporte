@@ -105,6 +105,10 @@ function establecerHorario(){
       horario=18; 
       sessionStorage.setItem("horario",horario);
       console.log(`Horario local ${horario}`)
+    }else{
+      horario=0;
+      sessionStorage.setItem("horario",horario);
+      console.log(`Horario pendiente ${horario}`)
     }
 }
 window.onload=function(){

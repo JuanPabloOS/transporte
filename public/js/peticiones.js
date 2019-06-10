@@ -73,8 +73,9 @@ function login(){
     //http.open("POST","http://localhost:3000/inicioSesion",true);
     var datos = {
         username:email,
-        password:pass
+        password:pass,    
     }
+    
     datos = JSON.stringify(datos);
     http.open("POST","/transporte/login",true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -92,6 +93,9 @@ function registrar(){
     if(email.length < 5){
          msj = "Tu usuario debe tener por lo menos 5 caracteres";
     }
+    if(email.length > 10){
+        msj = "Tu usuario debe tener máximo 10 caracteres";
+   }
     if(pass.length<5 || verificarPass.length<5){
         if(msj!=""){
             msj="Tu usuario y contraseña deben tener por lo menos 5 caracteres";
@@ -122,7 +126,7 @@ function registrar(){
                     if(respuesta.status == 0){                
                         // alert("Registro fallido");
                         //document.querySelector('.modal3').style.display='block';
-                            advertencia("Registro no completado","Revisa tus datos");
+                            advertencia("Registro no completado","Usuario no disponible o error en los datos");
                             setTimeout(() => {
                             closeModal2()
                         }, 2500);

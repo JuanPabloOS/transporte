@@ -88,6 +88,9 @@ function establecerHorario(){
     }else if(h==6 && m>=0){// cu 6:30
       horario=18; 
       console.log(`Horario local ${horario}`)
+    }else{
+      horario=0;
+      console.log(`Horario pendiente`);
     }
 }
 establecerHorario();
@@ -201,6 +204,9 @@ io.on('connection', function(client){
         reset(18);
         io.emit('reset',{horario:'CU - Juriquilla salida: 6:00',num:18});
         // console.log(`Horario servidor 18`)
+      }else{
+        reset(0);
+        io.emit('reset',{horario:'Horario Pendiente',num:0});
       }
     }
     intervalFunc();
